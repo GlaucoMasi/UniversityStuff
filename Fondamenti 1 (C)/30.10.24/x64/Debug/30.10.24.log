@@ -1,0 +1,3 @@
+﻿  es10.c
+C:\Users\s0001163983\Desktop\ProgettiC\30.10.24\es10.c(5,9): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  30.10.24.vcxproj -> C:\Users\s0001163983\Desktop\ProgettiC\30.10.24\x64\Debug\30.10.24.exe

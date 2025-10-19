@@ -1,0 +1,22 @@
+AA12 Lucas_Deere 25 115 37
+AB12 Malcom_Hese 34
+SD09 John_Shaqur 27 100
+SS34 Marq_Lindon 30 110 40
+CD34 Craig_Rodriguez
+UU32 Perry_Brown 20 150 30
+OO02 Liu_Cheng 38 105 35
+LW21 Ted_Moresby 20 120
+CR81 Michael_McLemore 28
+JI61 Carl_Green 33 98 56
+NH09 Niels_Parker 40 105
+FS32 Ralph_Venter 37 120
+TR11 Sergio_Hernandes 28 114 48
+GR55 Paul_OBrien 35 107 40
+DE22 Brian_Connelly
+TH99 Simon_White 30 110 50
+JK90 Dexter_Mallory 37 102 46
+WW34 Casey_Smith 23
+WN04 Linda_Garcia 11 140 64
+TW73 Michel_Fremont 45
+ZX84 Ana_Rodriguez 30 129 43
+UY53 Manon_Lescault 36 105

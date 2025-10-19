@@ -1,0 +1,16 @@
+J_001 Cuoco R 6 33500
+J_002 OperaioEdile E 0 19200
+J_003 OperaioEdile E 1 20500
+J_004 OperaioEdile E 0 17900
+J_005 Geometra E 2 23500
+J_006 Architetto E 5 34000
+J_007 IngegnereCivile E 2 27500
+J_008 IngegnereCivile E 10 61700
+J_009 OperaioEdile E 6 27200
+J_010 Cameriere R 7 21000
+J_011 CapoSala R 3 23700
+J_012 Cameriere R 0 18900
+J_013 Cameriere R 0 19300
+J_014 Geometra E 3 23500
+J_015 Geometra E 6 23500
+J_016 OperaioEdile E 0 20500

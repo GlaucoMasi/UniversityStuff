@@ -1,0 +1,10 @@
+LaTrama Einaudi 1 9.80 Il sergente nella neve
+LaTrama Mondadori 3 14.90 Il Codice Da Vinci
+Federico LaTrama 2 9.80 Il sergente nella neve
+Andrea LaTrama 3 9.80 Il sergente nella neve
+Andrea LaTrama 1 7.90 Se questo e' un uomo
+Federico LaTrama 1 18.90 Il pendolo di Focault
+LaTrama Einaudi 5 7.90 Se questo e' un uomo
+LaTrama Mondadori 7 18.90 Il pendolo di Focault
+Federico LaTrama 1 13.90 Il nome della rosa
+Andrea LaTrama 1 13.90 Il nome della rosa

@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\esame_07.01.24\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|G:\\esame_07.01.24\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|G:\\esame_07.01.24\\cash.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|solutionrelative:cash.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|G:\\esame_07.01.24\\cash.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|solutionrelative:cash.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|G:\\esame_07.01.24\\list.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|solutionrelative:list.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|G:\\esame_07.01.24\\list.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|solutionrelative:list.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|G:\\esame_07.01.24\\element.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|solutionrelative:element.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|G:\\esame_07.01.24\\element.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4F2CC129-D35E-476B-9F20-BD39566227D4}|esame_07.01.24.vcxproj|solutionrelative:element.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.c",
+              "DocumentMoniker": "G:\\esame_07.01.24\\main.c",
+              "RelativeDocumentMoniker": "main.c",
+              "ToolTip": "G:\\esame_07.01.24\\main.c",
+              "RelativeToolTip": "main.c",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-12-12T16:45:17.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "list.h",
+              "DocumentMoniker": "G:\\esame_07.01.24\\list.h",
+              "RelativeDocumentMoniker": "list.h",
+              "ToolTip": "G:\\esame_07.01.24\\list.h",
+              "RelativeToolTip": "list.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T17:01:09.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "list.c",
+              "DocumentMoniker": "G:\\esame_07.01.24\\list.c",
+              "RelativeDocumentMoniker": "list.c",
+              "ToolTip": "G:\\esame_07.01.24\\list.c",
+              "RelativeToolTip": "list.c",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-12-12T16:46:10.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "element.h",
+              "DocumentMoniker": "G:\\esame_07.01.24\\element.h",
+              "RelativeDocumentMoniker": "element.h",
+              "ToolTip": "G:\\esame_07.01.24\\element.h",
+              "RelativeToolTip": "element.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T16:42:48.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "element.c",
+              "DocumentMoniker": "G:\\esame_07.01.24\\element.c",
+              "RelativeDocumentMoniker": "element.c",
+              "ToolTip": "G:\\esame_07.01.24\\element.c",
+              "RelativeToolTip": "element.c",
+              "ViewState": "AgIAABQAAAAAAAAAAAAiwCgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-12-12T16:42:47.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cash.h",
+              "DocumentMoniker": "G:\\esame_07.01.24\\cash.h",
+              "RelativeDocumentMoniker": "cash.h",
+              "ToolTip": "G:\\esame_07.01.24\\cash.h",
+              "RelativeToolTip": "cash.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-12T16:39:14.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cash.c",
+              "DocumentMoniker": "G:\\esame_07.01.24\\cash.c",
+              "RelativeDocumentMoniker": "cash.c",
+              "ToolTip": "G:\\esame_07.01.24\\cash.c",
+              "RelativeToolTip": "cash.c",
+              "ViewState": "AgIAAEwAAAAAAAAAAADwv2wAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-12-12T16:38:43.01Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

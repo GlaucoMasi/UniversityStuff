@@ -1,0 +1,17 @@
+﻿  element.c
+G:\templatesame\element.h(5,16): error C2016: C richiede che uno struct o un'unione includa almeno un membro
+  (compilazione del file di origine 'element.c')
+  
+  esame.c
+G:\templatesame\element.h(5,16): error C2016: C richiede che uno struct o un'unione includa almeno un membro
+  (compilazione del file di origine 'esame.c')
+  
+  list.c
+G:\templatesame\element.h(5,16): error C2016: C richiede che uno struct o un'unione includa almeno un membro
+  (compilazione del file di origine 'list.c')
+  
+  main.c
+G:\templatesame\element.h(5,16): error C2016: C richiede che uno struct o un'unione includa almeno un membro
+  (compilazione del file di origine 'main.c')
+  
+  Generazione del codice in corso...

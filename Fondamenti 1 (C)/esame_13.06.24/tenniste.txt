@@ -1,0 +1,16 @@
+CarlaRossi 6 4
+MichelaGobelli 5 5
+LucillaDanidi 2 8
+DanielaStroppa 5 5
+LuciaCastelli 3 7
+CarolaBellachioma 8 2
+ClaraCastagna 9 1
+BiancaDorea 4 6
+RossellaMarini 7 3
+MariaCalboli 6 4
+DariaTondelli 6 4
+SilviaCirrami 2 8
+AnnaTorti 3 7
+MariaFerrero 6 4
+SibillaTurati 5 5
+ElettraRoncoli 10 0 

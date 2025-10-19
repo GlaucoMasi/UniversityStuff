@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\esame_11.07.24\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|G:\\esame_11.07.24\\negozio.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|solutionrelative:negozio.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|G:\\esame_11.07.24\\negozio.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|solutionrelative:negozio.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|G:\\esame_11.07.24\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|G:\\esame_11.07.24\\element.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|solutionrelative:element.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|G:\\esame_11.07.24\\element.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F98BB58E-CC2A-43A5-8A30-10898339A577}|esame_11.07.24.vcxproj|solutionrelative:element.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.c",
+              "DocumentMoniker": "G:\\esame_11.07.24\\main.c",
+              "RelativeDocumentMoniker": "main.c",
+              "ToolTip": "G:\\esame_11.07.24\\main.c",
+              "RelativeToolTip": "main.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-01-06T14:52:21.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "negozio.h",
+              "DocumentMoniker": "G:\\esame_11.07.24\\negozio.h",
+              "RelativeDocumentMoniker": "negozio.h",
+              "ToolTip": "G:\\esame_11.07.24\\negozio.h",
+              "RelativeToolTip": "negozio.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-06T14:52:25.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "negozio.c",
+              "DocumentMoniker": "G:\\esame_11.07.24\\negozio.c",
+              "RelativeDocumentMoniker": "negozio.c",
+              "ToolTip": "G:\\esame_11.07.24\\negozio.c",
+              "RelativeToolTip": "negozio.c",
+              "ViewState": "AgIAADEAAAAAAAAAAADgv0UAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-01-06T14:52:25.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "element.h",
+              "DocumentMoniker": "G:\\esame_11.07.24\\element.h",
+              "RelativeDocumentMoniker": "element.h",
+              "ToolTip": "G:\\esame_11.07.24\\element.h",
+              "RelativeToolTip": "element.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-06T14:52:27.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "element.c",
+              "DocumentMoniker": "G:\\esame_11.07.24\\element.c",
+              "RelativeDocumentMoniker": "element.c",
+              "ToolTip": "G:\\esame_11.07.24\\element.c",
+              "RelativeToolTip": "element.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-01-06T14:52:26.562Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

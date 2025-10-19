@@ -1,0 +1,5 @@
+12 23.00 FruttaVerduraSNC
+44 26.50 AmazonEUSRL
+12 18.20 PasticceriaSoloCoseBuone
+12 45.99 AmazonEUSRL
+44 34.00 PasticceriaSoloCoseBuone

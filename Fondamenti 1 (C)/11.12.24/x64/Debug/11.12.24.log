@@ -1,0 +1,6 @@
+﻿  pdf14b_es1.c
+C:\Users\S0001163983\Desktop\ProgettiC\11.12.24\pdf14b_es1.c(123,18): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[15]'
+C:\Users\S0001163983\Desktop\ProgettiC\11.12.24\pdf14b_es1.c(123,14): warning C4024: 'scriviSpese': different types for formal and actual parameter 1
+C:\Users\S0001163983\Desktop\ProgettiC\11.12.24\pdf14b_es1.c(128,30): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[15]'
+C:\Users\S0001163983\Desktop\ProgettiC\11.12.24\pdf14b_es1.c(128,26): warning C4024: 'leggiSpese': different types for formal and actual parameter 1
+  11.12.24.vcxproj -> C:\Users\S0001163983\Desktop\ProgettiC\11.12.24\x64\Debug\11.12.24.exe
