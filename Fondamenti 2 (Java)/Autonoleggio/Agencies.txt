@@ -1,0 +1,22 @@
+BOLOGNA, Aeroporto Marconi, lun-ven 08:00-23:59, sab 08:00-23:59, dom 08:00-23:59
+BOLOGNA, Stazione centrale, lun-ven 09:00-13:00/14:00-18:00, sab chiuso, dom chiuso
+MODENA, centro, lun-ven 08:30-12:00/15:00-18:00, sab chiuso, dom chiuso
+REGGIO EMILIA, centro, lun-ven 08:30-12:30/14:30-18:30, sab 08:30-12:30, dom chiuso
+PARMA, centro, lun-ven 08:30-12:30/14:30-18:00, sab 08:30-12:00, dom chiuso
+FERRARA, centro, lun-ven 08:30-12:30/14:30-18:30, sab 08:30-12:30, dom chiuso
+RIMINI, centro, lun-ven 08:30-12:30/15:00-19:00, sab 09:00-13:00, dom chiuso
+VERONA, Aeroporto Catullo, lun-ven 08:30-22:30, sab 08:30-22:30, dom 08:30-22:30
+VERONA, centro, lun-ven 08:30-12:30/14:00-18:00, sab 08:30-12:30, dom chiuso
+MANTOVA, centro, lun-ven 09:00-13:00, sab chiuso, dom chiuso
+VENEZIA, Aeroporto Marco Polo, lun-ven 08:00-23:59, sab 08:00-23:59, dom 08:00-23:59
+VENEZIA, Mestre stazione, lun-ven 08:30-18:30, sab 08:00-12:30, dom chiuso
+MILANO, Aeroporto Malpensa T1, lun-ven 07:30-23:59, sab 07:30-23:59, dom 07:30-23:59
+MILANO, Aeroporto Malpensa T2, lun-ven 08:00-14:00/18:00-23:59, sab chiuso, dom 08:00-14:00/18:00-23:59
+MILANO, Aeroporto Linate, lun-ven 07:30-23:59, sab 07:30-23:59, dom 07:30-23:59
+MILANO, Stazione Rogoredo, lun-ven 08:00-17:00, sab 08:30-12:00, dom chiuso
+MILANO, Stazione centrale, lun-ven 08:30-20:00, sab 08:30-20:00, dom 08:30-17:00
+MILANO, centro, lun-ven 08:30-17:00, sab 08:30-17:00, dom chiuso
+TORINO, Aeroporto Caselle, lun-ven 08:30-23:00, sab 08:30-21:00, dom 08:30-20:00
+TORINO, centro, lun-ven 08:30-18:30, sab 09:00-12:30, dom chiuso
+FIRENZE, Aeroporto Peretola, lun-ven 08:00-23:00, sab 08:00-23:00, dom 08:00-23:00
+FIRENZE, Stazione SMN, lun-ven 09:00-17:00, sab 09:00-13:00, dom chiuso

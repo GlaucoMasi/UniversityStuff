@@ -1,0 +1,4 @@
+A: daily=45 €, weekend=87 €, dropoff=100 €
+B: daily=51 €, weekend=97 €, dropoff=120 €
+C: daily=58 €, weekend=115 €, dropoff=140 €
+D: daily=66 €, weekend=121 €, dropoff=170 €

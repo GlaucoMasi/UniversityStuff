@@ -1,0 +1,8 @@
+StartContact
+fawfsa;fasffas
+EndContact
+StartContact
+Iris;Prifti
+Phone;cell;3349780702
+Address;casa;Via Purocelo;30;40026;Imola;Italia
+EndContact

@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"MyMath","l":"mcd(int, int)","u":"mcd(int,int)"},{"p":"<Unnamed>","c":"MyMath","l":"mcm(int, int)","u":"mcm(int,int)"},{"p":"<Unnamed>","c":"MyMath","l":"MyMath()","u":"%3Cinit%3E()"}];updateSearchResults();
