@@ -34,6 +34,7 @@
     CONSTRAINT NomeVincolo <vincolo> - Assegna un nome al vincolo
 */
 
+-- !Il CHECK fallisce solo se la condizione è falsa, non fallisce quando è NULL!
 
 -- Creazione di Tabelle
 CREATE TABLE Students (
