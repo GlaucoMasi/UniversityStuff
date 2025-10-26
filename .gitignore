@@ -1,5 +1,11 @@
-# File e cartelle generati da Visual Studio
+############################
+# Visual Studio (C)
+############################
+
+# Cartella di lavoro VS
 .vs/
+
+# Metadati utente/soluzione
 *.suo
 *.user
 *.userosscache
@@ -9,27 +15,92 @@
 *.VC.db-shm
 *.VC.db-wal
 
-# File di build
-x64/
+# Build output (classico)
 Debug/
 Release/
+x64/
+x86/
+ARM/
+ARM64/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+
+# File binari/temporanei di compilazione
 *.exe
-*.obj
-*.pdb
-*.idb
+*.dll
+*.lib
+*.exp
 *.ilk
+*.idb
+*.pdb
+*.iobj
+*.ipdb
+*.obj
 *.log
 *.tlog/
 *.cache
-*.ipch/
+*.lastbuildstate
 *.FileListAbsolute.txt
 *.recipe
-*.lastbuildstate
+*.manifest
+*.pch
+*.rsp
 
-# File temporanei di Windows
+# Intellisense precompiled headers
+*.ipch/
+*.opendb
+
+# Altri indici VS
+*.vsidx
+
+############################
+# Eclipse (Java)
+############################
+
+# Metadati Eclipse
+.project
+.classpath
+.settings/
+
+# Output Eclipse
+bin/
+
+# Java generico
+*.class
+# (Se non vuoi versionare artefatti build, sblocca anche questi)
+# *.jar
+# *.war
+# *.ear
+
+# File di log
+*.log
+
+############################
+# (Opzionale) Maven / Gradle
+############################
+# Scommenta se li usi
+
+# Maven
+# target/
+
+# Gradle
+# .gradle/
+# build/
+
+############################
+# OS / Editor / Varie
+############################
+
+# macOS
+.DS_Store
+
+# Windows
 Thumbs.db
 Desktop.ini
 
-# Altri file generati automaticamente
-*.vsidx
-*.json.backup
+# Editor comuni
+*.swp
+*.swo
+.idea/          # IntelliJ (se mai lo userai)
+.vscode/        # VS Code settings locali (se non vuoi versionarle)
