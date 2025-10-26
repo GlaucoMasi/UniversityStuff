@@ -1,0 +1,35 @@
+# File e cartelle generati da Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.VC.db-shm
+*.VC.db-wal
+
+# File di build
+x64/
+Debug/
+Release/
+*.exe
+*.obj
+*.pdb
+*.idb
+*.ilk
+*.log
+*.tlog/
+*.cache
+*.ipch/
+*.FileListAbsolute.txt
+*.recipe
+*.lastbuildstate
+
+# File temporanei di Windows
+Thumbs.db
+Desktop.ini
+
+# Altri file generati automaticamente
+*.vsidx
+*.json.backup

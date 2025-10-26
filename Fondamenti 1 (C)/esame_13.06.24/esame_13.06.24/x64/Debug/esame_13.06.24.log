@@ -1,5 +1,0 @@
-﻿  main.c
-  torneo.c
-G:\esame_13.06.24\torneo.c(35,3): warning C4133: 'return': tipi non compatibili. Da 'list' a 'Tennista *'
-  Generazione del codice in corso...
-  esame_13.06.24.vcxproj -> G:\esame_13.06.24\x64\Debug\esame_13.06.24.exe

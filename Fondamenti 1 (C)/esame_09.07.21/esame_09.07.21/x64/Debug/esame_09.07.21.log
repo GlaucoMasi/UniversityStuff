@@ -1,3 +1,0 @@
-﻿  list.c
-G:\esame_09.07.21\list.c(46,33): warning C4013: 'strcmp' non definita. Verrà considerata come esterna che restituisce un int.
-  esame_09.07.21.vcxproj -> G:\esame_09.07.21\x64\Debug\esame_09.07.21.exe
