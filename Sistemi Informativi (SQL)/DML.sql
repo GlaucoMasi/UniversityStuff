@@ -97,5 +97,3 @@ WHERE   Matricola = 'A1234';
     ON UPDATE SET NULL - Imposta a NULL le chiavi esterne delle righe figlie quando la chiave primaria della riga padre viene aggiornata
     ON UPDATE SET DEFAULT - Imposta al valore di default le chiavi esterne delle righe figlie quando la chiave primaria della riga padre viene aggiornata
 */
-
-

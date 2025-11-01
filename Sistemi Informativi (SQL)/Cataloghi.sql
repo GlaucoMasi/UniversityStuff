@@ -1,0 +1,149 @@
+-- I cataloghi sono un insieme di tables e view che descrivono la struttura logica e fisica degli oggetti di un DB, ovvero contengono metadati
+-- Per questo motivo, contengono anche informazioni sui cataloghi stessi
+-- Gli schemi sono, tra gli altri:
+-- 1. SYSIBM: tables a uso interno del DB2
+-- 2. SYSCAT: viste definite sulle tables in SYSIBM, a uso degli utenti
+-- 3. SYSSTAT: viste con statistiche sul DB
+-- NB: per mostrarli tasto dx sulla connession -> Connection View -> Show System Objects
+
+-- SYSCAT.SCHEMATA
+-- Ogni tupla descrive uno schema:
+-- SCHEMANAME
+-- OWNER
+-- CREATE_TIME
+
+-- SYSCAT.TABLES
+-- Ogni tupla descrive una table o una view:
+-- 1. TABSCHEMA
+-- 2. TABNAME
+-- 3. TYPE: 'T' per tables, 'V' per views
+-- 4. OWNER
+-- 5. CREATE_TIME
+-- 6. COLCOUNT: Numero di colonne
+-- 7. CHILDREN: Numero di vincoli di FK che fanno riferimento a questo oggetto
+-- 8. PARENTS: Numero di vincoli di FK definiti per questo oggetto
+-- 9. SELFREFS: Numero di FK autoreferenziali
+-- 10. CHECKCOUNT: Numero di vincoli di CHECK definiti per questo oggetto
+-- 11. KEYCOLUMNS: Numero di colonne nella PK
+
+-- SYSCAT.VIEWS
+-- Ogni tupla descrive una vista:
+-- 1. VIEWSCHEMA
+-- 2. VIEWNAME
+-- 3. OWNER
+-- 4. VIEWCHECK: Tipo di check applicato per le modifiche ('C' = cascaded, 'L' = local, 'N' = none)
+-- 5. READONLY: 'Y' se la view è di sola lettura, 'N' se può essere modificata con gli opportuni privilegi
+-- 6. TEXT: CLOB (Character Large Object) contenente la definizione della vista, visibile con CAST
+
+-- SYSCAT.TABDEP
+-- Ogni tupla descrive una dipendenza di una vista da qualche altro oggetto:
+-- 1. TABSCHEMA
+-- 2. TABNAME
+-- 3. OWNER
+-- 4. BTYPE: Tipo di oggetto da cui dipende ('V' = view, 'T' = table)
+-- 5. BSCHEMA: Nome dello schema dell'oggetto da cui dipende la vista
+-- 6. BNAME: Nome dell'oggetto da cui dipende la vista
+
+-- SYSCAT.COLUMNS
+-- Ogni tupla descrive una colonna di una vista o di una tabella:
+-- 1. TABSCHEMA
+-- 2. TABNAME
+-- 3. COLNAME
+-- 4. TYPENAME: Nome del tipo della colonna
+-- 5. LENGTH: Lunghezza della colonna
+-- 6. DEFAULT: Valore di default della colonna se definito, altrimenti NULL
+-- 7. NULLS: 'Y' se la colonna ammette valori NULL, 'N' altrimenti
+-- 8. KEYSEQ: Posizione numerica della colonna all’interno della primary key
+
+-- SYSCAT.TABCONST
+-- Ogni tupla descrive un constraint di tipo CHECK, UNIQUE, PRIMARY KEY o FOREIGN KEY:
+-- 1. CONSTNAME
+-- 2. TABSCHEMA
+-- 3. TABNAME
+-- 4. OWNER
+-- 5. TYPE: Tipo di vincolo ('C' = CHECK, 'P' = PRIMARY KEY, 'F' = FOREIGN KEY, 'U' = UNIQUE)
+
+-- SYSCAT.KEYCOLUSE
+-- Ogni tupla descrive una colonna che fa parte di un vincolo di tipo PRIMARY KEY, KEY o FOREIGN KEY:
+-- 1. CONSTNAME
+-- 2. TABSCHEMA
+-- 3. TABNAME
+-- 4. COLNAME
+-- 5. COLSEQ: Posizione numerica della colonna nella definizione della chiave
+
+-- SYSCAT.REFERENCES
+-- Ogni tupla descrive un vincolo di tipo FOREIGN KEY, utile da utilizzare insieme a SYSCAT.KEYCOLUSE:
+-- 1. CONSTNAME
+-- 2. TABSCHEMA
+-- 3. TABNAME
+-- 4. OWNER
+-- 5. REFTABSCHEMA: Schema della tabella che contiene la PK
+-- 6. REFTABNAME: Nome della tabella che contiene la PK
+-- 7. REFKEYNAME: Nome del vincolo nella tabella che contiene la FK
+-- 8. COLCOUNT: Numero di colonne coinvolte nella FK
+-- 9. DELETERULE: Regola di cancellazione ('A' = no action, 'R' = restrict, 'C' = cascade, 'N' = set null)
+-- 10. UPDATERULE: Regola di aggiornamento ('A' = no action, 'R' = restrict)
+
+-- SYSCAT.CHECKS
+-- Ogni tupla descrive un vincolo di tipo CHECK:
+-- 1. CONSTNAME
+-- 2. OWNER
+-- 3. TABSCHEMA
+-- 4. TABNAME
+-- 5. CREATE_TIME
+-- 6. TEXT: CLOB contenente la condizione del vincolo di CHECK, visibile con CAST
+
+-- SYSCAT.COLCHECKS
+-- Ogni tupla descrive una colonna coinvolta in un vincolo di tipo CHECK, utile da utilizzare insieme a SYSCAT.CHECKS:
+-- 1. CONSTNAME
+-- 2. TABSCHEMA
+-- 3. TABNAME
+-- 4. COLNAME
+-- 5. USAGE: Uso della colonna, 'R' per i CHECK
+
+-- SYSCAT.DBAUTH
+-- Ogni tupla descrive i privilegi di un utente su un DB:
+-- 1. GRANTOR: Nome dell'utente che ha concesso il privilegio
+-- 2. GRANTEE: Nome dell'utente cui è concesso il privilegio
+-- 3. GRANTEETYPE: Tipo di utente cui è concesso il privilegio ('U' = utente, 'G' = gruppo)
+-- 4. CONNECTAUTH: 'Y' se l'utente può connettersi al DB, 'N' altrimenti
+-- 5. CREATETABAUTH: 'Y' se l'utente può creare tabelle nel DB, 'N' altrimenti
+-- 6. DBADMAUTH: 'Y' se l'utente è amministratore del DB, 'N' altrimenti
+-- 7. IMPLSCHEMAAUTH: Privilegio per creare implicitamente uno schema quando si crea un oggetto in uno schema non esistente (Y/N)
+
+-- SYSCAT.SCHEMAAUTH
+-- Ogni tupla descrive i privilegi di un utente su uno schema:
+-- 1. GRANTOR: Nome dell'utente che ha concesso il privilegio
+-- 2. GRANTEE: Nome dell'utente cui è concesso il privilegio
+-- 3. GRANTEETYPE: Tipo di utente cui è concesso il privilegio ('U' = utente, 'G' = gruppo)
+-- 4. SCHEMANAME
+-- 5. ALTERINAUTH: Privilegio per modificare gli oggetti contenuti nello schema ('G' = concesso con grant option, 'Y' = concesso, 'N' = non concesso)
+-- 6. CREATEINAUTH: Privilegio per creare oggetti nello schema (G/Y/N)
+-- 7. DROPINAUTH: Privilegio per droppare oggetti nello schema (G/Y/N)
+
+-- SYSCAT.TABAUTH
+-- Ogni tupla descrive i privilegi di un utente su una tabella o una vista:
+-- 1. GRANTOR: Nome dell'utente che ha concesso il privilegio
+-- 2. GRANTEE: Nome dell'utente cui è concesso il privilegio
+-- 3. GRANTEETYPE: Tipo di utente cui è concesso il privilegio ('U' = utente, 'G' = gruppo)
+-- 4. TABSCHEMA
+-- 5. TABNAME
+-- 6. CONTROLAUTH: Privilegio CONTROL, poteri totali sull'oggetto (‘Y’ = concesso, ‘N’ = non concesso)
+-- 7. ALTERAUTH: Privilegio per modificare l’oggetto (G/Y/N)
+-- 8. DELETEAUTH: Privilegio per eliminare tuple dall’oggetto (G/Y/N)
+-- 9. INDEXAUTH: Privilegio per creare un indice (G/Y/N)
+-- 10. INSERTAUTH: Privilegio per inserire tuple nell’oggetto (G/Y/N)
+-- 11. REFAUTH: Privilegio per creare ed eliminare foreign key che referenziano l’oggetto (G/Y/N)
+-- 12. SELECTAUTH: Privilegio per interrogare l’oggetto e creare viste da esso dipendenti (G/Y/N)
+-- 13. UPDATEAUTH: Privilegio per aggiornare tuple dell’oggetto (G/Y/N
+
+-- SYSCAT.COLAUTH
+-- Ogni tupla descrive i privilegi di un utente su una colonna:
+-- 1. GRANTOR: Nome dell'utente che ha concesso il privilegio
+-- 2. GRANTEE: Nome dell'utente cui è concesso il privilegio
+-- 3. GRANTEETYPE: Tipo di utente cui è concesso il privilegio ('U' = utente, 'G' = gruppo)
+-- 4. TABSCHEMA
+-- 5. TABNAME
+-- 6. COLNAME
+-- 7. PRIVTYPE: Tipo di privilegio ('R' = privilegio per creare FK, 'U' = privilegio di UPDATE)
+-- 8. GRANTABLE: 'G' se il privilegio è concesso con grant option, 'N' altrimenti
