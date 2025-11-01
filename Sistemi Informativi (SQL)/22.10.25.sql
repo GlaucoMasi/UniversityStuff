@@ -63,7 +63,8 @@ WHERE 	d.DEPTNO NOT IN (
 	WHERE 	e.LASTNAME LIKE 'L%'
 )
 
--- Q7) I dipartimenti e il rispettivo massimo stipendio per tutti i dipartimenti aventi un salario medio minore del salario medio calcolato considerando i dipendenti di tutti gli altri dipartimenti
+-- Q7) I dipartimenti e il rispettivo massimo stipendio per tutti i dipartimenti aventi un salario medio minore del salario medio
+-- calcolato considerando i dipendenti di tutti gli altri dipartimenti
 SELECT	e.WORKDEPT, MAX(e.SALARY) AS MAX_SALARY
 FROM 	EMPLOYEE e
 GROUP BY 	e.WORKDEPT
@@ -73,7 +74,8 @@ HAVING	AVG(e.SALARY*1.0) < (
 	WHERE 	e1.WORKDEPT != e.WORKDEPT 
 )
 
--- Q8) Per ogni dipartimento determinare lo stipendio medio per ogni lavoro per il quale il livello di educazione medio è maggiore di quello dei dipendenti dello stesso dipartimento che fanno un lavoro differente
+-- Q8) Per ogni dipartimento determinare lo stipendio medio per ogni lavoro per il quale il livello di educazione medio
+-- è maggiore di quello dei dipendenti dello stesso dipartimento che fanno un lavoro differente
 SELECT	e.WORKDEPT, e.JOB, CAST(AVG(e.SALARY*1.0) AS DECIMAL(10, 2)) AS AVG_SALARY
 FROM 	EMPLOYEE e
 GROUP BY 	e.WORKDEPT, e.JOB 
