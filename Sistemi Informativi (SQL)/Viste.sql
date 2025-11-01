@@ -107,3 +107,77 @@ FROM Sedi S, TABLE(
     WHERE I.Sede = S.Sede
     AND I.Ruolo = 'Analista'
 ) AS Stip(TotStip)
+
+
+-- Common Table Expressions: sono viste temporanee come le table expressions, ma possono essere usate come se fossero delle viste normali
+WITH SediStip(Sede, TotStip) AS (
+    SELECT  Sede, SUM(Stipendio)
+    FROM    Imp
+    GROUP BY Sede
+)
+SELECT  Sede
+FROM    SediStip
+WHERE   TotStip = (
+    SELECT  MAX(TotStip)
+    FROM    SediStip
+)
+
+
+-- Le Common Table Expressions possono essere ricorsive
+-- Considerando la tabella Genitori(Figlio, Genitore), trovare tutti gli antenati di un certo individuo
+-- Non si può esprimere in algebra relazionale, perchè non si sa a priori quante generazioni ci sono
+-- Ad ogni iterazione, il DBMS aggiunge le tuple che risultano dal join tra Genitori e le sole tuple aggiunte ad Antenati al passo precedente
+WITH Antenati(Persona, Avo) AS (
+    (SELECT  Figlio, Genitore              -- Subquery base
+    FROM    Genitori)     
+    UNION ALL
+    SELECT  G.Figlio, A.Avo
+    FROM    Genitori G, Antenati A
+    WHERE   G.Genitore = A.Persona         -- Subquery ricorsiva
+)
+SELECT  Avo
+FROM    Antenati
+WHERE   Persona = 'Anna'
+
+-- Informazione sui percorsi: lunghezza
+WITH Antenati(Persona, Avo, Lunghezza) AS (
+    (SELECT  Figlio, Genitore, 1           -- Subquery base
+    FROM    Genitori)     
+    UNION ALL
+    SELECT  G.Figlio, A.Avo, A.Lunghezza+1
+    FROM    Genitori G, Antenati A
+    WHERE   G.Genitore = A.Persona         -- Subquery ricorsiva
+)
+SELECT  *
+FROM    Antenati
+WHERE   Persona = 'Anna'
+
+-- Informazione sui percorsi: costo
+WITH Percorsi(Composto, Componente, Qty) AS (
+    (SELECT Composto, Componente, Qta
+    FROM   Parti)
+    UNION ALL
+    (SELECT H.Composto, P.SubParte, H.Qty * P.Qta
+    FROM   Parti P, Percorsi H
+    WHERE  H.Composto = P.Componente)
+)
+SELECT  Composto, Componente, SUM(Qty) AS QtaTot
+FROM    Percorsi
+GROUP BY Composto, Componente
+
+-- Limitazioni sulla ricorsione
+WITH Percorsi(Da, A, Lungh, TotKm) AS (
+    (
+        SELECT Da, A, 1, Km
+        FROM Siti
+    )UNION ALL(
+        SELECT P.Da, S.A, P.Lungh+1, P.TotKm+S.Km
+        FROM Siti S, Percorsi P
+        WHERE P.A = S.From
+        AND P.Da <> S.To            -- Evita l'inserimento di dati inutili
+        AND P.Lungh+1 <= 3          -- Limitazione sulla lunghezza
+        AND P.TotKm+S.Km <= 17      -- Limitazione sul costo
+    )
+)
+SELECT *
+FROM Percorsi
