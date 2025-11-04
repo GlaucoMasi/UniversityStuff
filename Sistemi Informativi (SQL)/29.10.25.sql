@@ -115,6 +115,7 @@ GROUP BY	TABNAME
 HAVING		COUNT(*) >= 4
 ORDER BY	NUM_RIPET DESC
 
+
 -- Esercizio 2
 -- Q1) CAT_SAMENAME(TABNAME, SAMEBEFORE, SAMEAFTER)
 -- per ogni table o view nel proprio schema mostra il numero di (altre) table o view con lo stesso nome nel DB SIT_STUD create prima (SAMEBEFORE) e dopo (SAMEAFTER).
