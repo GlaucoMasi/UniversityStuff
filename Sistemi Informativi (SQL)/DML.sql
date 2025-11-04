@@ -93,7 +93,9 @@ WHERE   Matricola = 'A1234';
     ON DELETE CASCADE - Elimina le righe figlie quando la riga padre viene eliminata
     ON DELETE SET NULL - Imposta a NULL le chiavi esterne delle righe figlie quando la riga padre viene eliminata
     ON DELETE SET DEFAULT - Imposta al valore di default le chiavi esterne delle righe figlie quando la riga padre viene eliminata
+    ON DELETE NO ACTION - Non consente l'eliminazione della riga padre se esistono righe figlie collegate (comportamento predefinito)
     ON UPDATE CASCADE - Aggiorna le chiavi esterne delle righe figlie quando la chiave primaria della riga padre viene aggiornata
     ON UPDATE SET NULL - Imposta a NULL le chiavi esterne delle righe figlie quando la chiave primaria della riga padre viene aggiornata
     ON UPDATE SET DEFAULT - Imposta al valore di default le chiavi esterne delle righe figlie quando la chiave primaria della riga padre viene aggiornata
+    ON UPDATE NO ACTION - Non consente l'aggiornamento della chiave primaria della riga padre se esistono righe figlie collegate (comportamento predefinito)
 */
