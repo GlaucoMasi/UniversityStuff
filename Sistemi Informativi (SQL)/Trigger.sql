@@ -52,7 +52,7 @@ SIGNAL SQLSTATE '70000'
 
 -- Le azioni di un before trigger possono essere:
 -- 1. SELECT
--- 2. SIGNAL: per generare un'eccezione e bloccare l'operazione che ha attivato il trigger
+-- 2. SIGNAL: per generare un'eccezione e bloccare l'operazione che ha attivato il trigger (anche per un after)
 -- 3. SET: per modificare i valori della tupla in esame
 CREATE TRIGGER EmpMinSalary
 NO CASCADE BEFORE INSERT ON Employee
