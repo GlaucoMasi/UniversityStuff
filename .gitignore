@@ -68,25 +68,9 @@ bin/
 
 # Java generico
 *.class
-# (Se non vuoi versionare artefatti build, sblocca anche questi)
-# *.jar
-# *.war
-# *.ear
 
 # File di log
 *.log
-
-############################
-# (Opzionale) Maven / Gradle
-############################
-# Scommenta se li usi
-
-# Maven
-# target/
-
-# Gradle
-# .gradle/
-# build/
 
 ############################
 # OS / Editor / Varie
@@ -102,5 +86,5 @@ Desktop.ini
 # Editor comuni
 *.swp
 *.swo
-.idea/          # IntelliJ (se mai lo userai)
-.vscode/        # VS Code settings locali (se non vuoi versionarle)
+.idea/
+.vscode/
