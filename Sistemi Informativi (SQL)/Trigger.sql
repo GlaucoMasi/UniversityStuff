@@ -106,6 +106,7 @@ ELSE
 END IF
 
 
--- Nelle preferenze dell'editor SQL (tasto destro del mouse) -> Spuntare la casella "Ignore native delimiter" -> Lasciare la riga bianca come statement delimiter
+-- Nelle preferenze dell'editor SQL (tasto destro del mouse)
+-- -> SQL Processing -> Global settings -> Ignore native delimiter -> Lasciare la riga bianca come statement delimiter
 -- Per creare un trigger usare CREATE OR REPLACE TRIGGER <NomeTrigger> e per eliminarlo usare DROP TRIGGER <NomeTrigger>
 -- Se si cancella la table per cui è definito un trigger, questo non risulta più visibile e bisogna cancellarlo esplicitamente con DROP TRIGGER
