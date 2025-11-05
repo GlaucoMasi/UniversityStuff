@@ -21,7 +21,7 @@ ORDER BY A1 DESC, Somma ASC         -- Ordinamento discendente per A1, ascendent
 SELECT a.column, b.column
 FROM tableA a
 INNER JOIN tableB b
-  ON a.id = b.id;
+    ON a.id = b.id;
 
 -- CROSS JOIN - Restituisce il prodotto cartesiano di entrambe le tabelle, equivalente a non specificare il tipo di join
 SELECT a.column, b.column
@@ -32,25 +32,25 @@ CROSS JOIN tableB b
 SELECT a.column, b.column
 FROM tableA a
 LEFT JOIN tableB b
-  ON a.id = b.id;
+    ON a.id = b.id;
 
 -- RIGHT JOIN - Restituisce tutte le righe dalla tabella di destra e le righe corrispondenti dalla tabella di sinistra
 SELECT a.column, b.column
 FROM tableA a
 RIGHT JOIN tableB b
-  ON a.id = b.id;
+    ON a.id = b.id;
 
 -- FULL JOIN - Restituisce tutte le righe quando c'è una corrispondenza in una delle due tabelle
 SELECT a.column, b.column
 FROM tableA a
 FULL JOIN tableB b
-  ON a.id = b.id;
+    ON a.id = b.id;
 
 -- SELF JOIN - Restituisce righe da una tabella unite a se stessa
 SELECT a.column, b.column
 FROM tableA a
 JOIN tableA b
-  ON a.id = b.related_id;
+    ON a.id = b.related_id;
 
 
 -- Operatori Insiemistici
@@ -67,8 +67,8 @@ JOIN tableA b
 -- Aggiornamento dei Dati - Gli attributi non inclusi assumono valore NULL o DEFAULT
 -- INSERT
 INSERT INTO Studenti (Matricola, CF, Cognome, DataNascita, Email)
-VALUES              ('A1234', 'RSSMRA85M01H501Z', 'Rossi', '1985-01-01', 'luca@gmail.com'),
-                    ('B5678', 'VRDLGI90B02F205X', 'Verdi', '1990-02-02', 'marco@gmail.com');
+VALUES  ('A1234', 'RSSMRA85M01H501Z', 'Rossi', '1985-01-01', 'luca@gmail.com'),
+        ('B5678', 'VRDLGI90B02F205X', 'Verdi', '1990-02-02', 'marco@gmail.com');
 
 INSERT INTO StudentiSenzaEmail
 SELECT  Matricola, Cognome, Nome
