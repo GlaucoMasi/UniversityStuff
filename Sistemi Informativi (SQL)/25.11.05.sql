@@ -65,30 +65,32 @@ DELETE FROM S
 WHERE	C = OldRow.C
 
 -- Inserimenti validi
-INSERT INTO R
-VALUES	(1, 100),
-		(2, NULL),
-		(3, 200);
-INSERT INTO S
-VALUES	(10, 100),
-		(20, 100),
-		(30, 200);
+INSERT INTO R VALUES
+	(1, 100),
+  (2, NULL),
+  (3, 200);
+INSERT INTO S VALUES
+	(10, 100),
+  (20, 100),
+  (30, 200);
 
 -- Inserimento non valido: R.C duplicato
-INSERT INTO R VALUES(4, 200);
+INSERT INTO R VALUES
+  (4, 200);
 
 -- Inserimenti multipli non validi: R.C duplicato
-INSERT INTO R
-VALUES	(4, 300),
-		(5, 300)
+INSERT INTO R VALUES
+  (4, 300),
+  (5, 300)
 
 -- Inserimento non valido: violazione del vincolo di foreign key
-INSERT INTO S VALUES(40, 300);
+INSERT INTO S VALUES
+  (40, 300);
 
 -- Inserimenti multipli non validi: violazione del vincolo di foreign key
-INSERT INTO S
-VALUES	(40, 300),
-		(50, 400)
+INSERT INTO S VALUES
+  (40, 300),
+  (50, 400)
 
 -- Esempio di cancellazione in cascata
 DELETE FROM R
@@ -97,8 +99,8 @@ WHERE  C >= 100;
 
 -- Esercizio 2
 CREATE TABLE PRODOTTI(
-    PCODE 	 CHAR(5) NOT NULL PRIMARY KEY,  	
-    DESCRIZIONE VARCHAR(20) NOT NULL,
+  PCODE 	 CHAR(5) NOT NULL PRIMARY KEY,  	
+  DESCRIZIONE VARCHAR(20) NOT NULL,
 	PREZZO 	 DEC(6,2) NOT NULL CHECK (PREZZO > 0)
 );
 
@@ -162,16 +164,16 @@ SET		TOTALE = TOTALE - O.QUANTITA * (
 WHERE	ID = O.ID;
 
 -- Inserimento in ORDINI
-INSERT INTO ORDINI(ID,NOMECLIENTE)
-VALUES ('11111', 'Paolino Paperino');
+INSERT INTO ORDINI(ID,NOMECLIENTE) VALUES
+  ('11111', 'Paolino Paperino');
 
 -- Inserimento in PRODOTTI
-INSERT INTO PRODOTTI 
-VALUES ('P0001', 'Panettone', 4.50);
+INSERT INTO PRODOTTI VALUES
+  ('P0001', 'Panettone', 4.50);
 
 -- Inserimento in VENDITE
-INSERT INTO VENDITE VALUES 
-('P0001', '11111', 2);
+INSERT INTO VENDITE VALUES
+  ('P0001', '11111', 2);
 
 -- Update di VENDITE 
 UPDATE 	VENDITE 
@@ -187,18 +189,18 @@ AND		ID = '11111';
 
 -- Esercizio 3
 CREATE TABLE STUDENTI(
-    MATR 	CHAR(6) NOT NULL PRIMARY KEY,
-    NOME 	VARCHAR(30) NOT NULL,
-    COGNOME VARCHAR(30) NOT NULL
+  MATR 	CHAR(6) NOT NULL PRIMARY KEY,
+  NOME 	VARCHAR(30) NOT NULL,
+  COGNOME VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE CORSI (
-    CODC 	CHAR(3) NOT NULL PRIMARY KEY,
+  CODC 	CHAR(3) NOT NULL PRIMARY KEY,
 	NOME 	VARCHAR(30) NOT NULL UNIQUE
 );
 
 CREATE TABLE APPELLI (
-    CODC 	CHAR(3) NOT NULL REFERENCES CORSI,
+  CODC 	CHAR(3) NOT NULL REFERENCES CORSI,
 	DATA 	DATE NOT NULL, 
 	LUOGO 	VARCHAR(30) NOT NULL,
 	PRIMARY KEY (CODC, DATA)
@@ -206,7 +208,7 @@ CREATE TABLE APPELLI (
 
 CREATE TABLE ESAMI (
 	MATR 	CHAR(6) NOT NULL REFERENCES STUDENTI,
-    CODC 	CHAR(3) NOT NULL,
+  CODC 	CHAR(3) NOT NULL,
 	DATA 	DATE NOT NULL, 
 	VOTO 	INT NOT NULL CHECK (VOTO BETWEEN 0 AND 31),
 	ACCETTATO CHAR(1) DEFAULT NULL CHECK (ACCETTATO = 'Y'),
@@ -216,7 +218,7 @@ CREATE TABLE ESAMI (
 
 CREATE TABLE VERBALIZZAZIONI (
 	MATR 	CHAR(6) NOT NULL REFERENCES STUDENTI,
-    CODC 	CHAR(3) NOT NULL,
+  CODC 	CHAR(3) NOT NULL,
 	DATA 	DATE NOT NULL, 
 	VOTO 	INT NOT NULL CHECK (VOTO BETWEEN 18 AND 31),
 	FOREIGN KEY (CODC, DATA) REFERENCES APPELLI,
@@ -224,20 +226,20 @@ CREATE TABLE VERBALIZZAZIONI (
 );
 
 -- Insertimenti validi
-INSERT INTO STUDENTI VALUES
-	('765432', 'Alan', 'Turing');
+INSERT INTO STUDENTI VALUES 
+  ('765432', 'Alan', 'Turing');
 
-INSERT INTO CORSI VALUES
-	('SIT', 'Sistemi Informativi T'), 
-	('CET', 'Calcolatori Elettronici T');
+INSERT INTO CORSI VALUES 
+  ('SIT', 'Sistemi Informativi T'), 
+  ('CET', 'Calcolatori Elettronici T');
 
 INSERT INTO APPELLI VALUES 
 	('SIT', '10.02.2024', 'LAB 4'),
-   	('SIT', '22.06.2024', 'LAB 9'),
-   	('CET', '20.01.2024', 'AULA 2.9'),
-   	('CET', '14.07.2024', 'AULA 2.4');
+  ('SIT', '22.06.2024', 'LAB 9'),
+  ('CET', '20.01.2024', 'AULA 2.9'),
+  ('CET', '14.07.2024', 'AULA 2.4');
 
-INSERT INTO ESAMI VALUES 
+INSERT INTO ESAMI VALUES
 	('765432', 'SIT', '10.02.2024', 19, NULL),
  	('765432', 'SIT', '22.06.2024', 30, NULL),
  	('765432', 'CET', '20.01.2024', 15, NULL),
@@ -253,7 +255,8 @@ WHEN (N.ACCETTATO IS NOT NULL)
 SIGNAL SQLSTATE '70003' ('Non è possibile inserire direttamente un esame con valore Accettato = ''Y''');
 
 -- Inserimento non valido
-INSERT INTO ESAMI VALUES ('765432', 'SIT', '15.07.2024', 30, 'Y');
+INSERT INTO ESAMI VALUES
+  ('765432', 'SIT', '15.07.2024', 30, 'Y');
 
 -- Q2) Non deve essere possibile, per uno stesso studente, accettare 2 o più voti di più esami di uno stesso corso
 CREATE OR REPLACE TRIGGER SingoloEsameAccettato
