@@ -2,9 +2,9 @@ SELECT  Codice
 FROM    Impiegati
 WHERE   SEDE <> 'S01'
 AND     (Ruolo, Stipendio) IN(
-    SELECT  Ruolo, Stipendio
-    FROM    Impiegati
-    WHERE   SEDE = 'S01'
+  SELECT  Ruolo, Stipendio
+  FROM    Impiegati
+  WHERE   SEDE = 'S01'
 )
 
 
@@ -14,8 +14,8 @@ AND     (Ruolo, Stipendio) IN(
 SELECT  Codice
 FROM    Impiegati
 WHERE   Stipendio = (
-    SELECT  MIN(Stipendio)
-    FROM    Impiegati
+  SELECT  MIN(Stipendio)
+  FROM    Impiegati
 )
 
 
@@ -24,17 +24,17 @@ WHERE   Stipendio = (
 SELECT  Responsabile
 FROM    Sedi
 WHERE   Sede <operatore> ANY (
-    SELECT  Sede
-    FROM    Impiegati
-    WHERE   Stipendio > 1000
+  SELECT  Sede
+  FROM    Impiegati
+  WHERE   Stipendio > 1000
 )
 
 SELECT  Responsabile
 FROM    Sedi
 WHERE   Sede <operatore> ALL (
-    SELECT  Sede
-    FROM    Impiegati
-    WHERE   Stipendio > 1000
+  SELECT  Sede
+  FROM    Impiegati
+  WHERE   Stipendio > 1000
 )
 
 
@@ -44,10 +44,10 @@ WHERE   Sede <operatore> ALL (
 SELECT  Sede
 FROM    Sedi S
 WHERE   EXISTS (
-    SELECT *
-    FROM    Impiegati
-    WHERE   Ruolo = 'Programmatore'
-    AND     Sede = S.Sede
+  SELECT *
+  FROM    Impiegati
+  WHERE   Ruolo = 'Programmatore'
+  AND     Sede = S.Sede
 )
 
 -- Spesso ci si può ricondurre ad una query piatta
@@ -63,30 +63,30 @@ AND     S.Sede = I.Sede
 SELECT  Sede
 FROM    Sedi S
 WHERE   NOT EXISTS (
-    SELECT  Ruolo
-    FROM    Impiegati I1
-    WHERE   NOT EXISTS (
-        SELECT  (Sede, Ruolo)
-        FROM    Impiegati I2
-        WHERE   I2.Sede = S.Sede
-        AND     I2.Ruolo = I1.Ruolo
-    )
+  SELECT  Ruolo
+  FROM    Impiegati I1
+  WHERE   NOT EXISTS (
+    SELECT  (Sede, Ruolo)
+    FROM    Impiegati I2
+    WHERE   I2.Sede = S.Sede
+    AND     I2.Ruolo = I1.Ruolo
+  )
 )
 
 
 -- Subquery per Aggiornamento dei Dati
 DELETE  FROM    Impiegati
 WHERE   Sede IN (
-    SELECT  Sede
-    FROM    Sedi
-    WHERE   Citta = 'Bologna'
+  SELECT  Sede
+  FROM    Sedi
+  WHERE   Citta = 'Bologna'
 )
 
 UPDATE  Impiegati
 SET     Stipendio = 1.1*Stipendio
 WHERE   Sede IN (
-    SELECT  S.Sede
-    FROM    Sedi S, Progetti P
-    WHERE   S.Citta = P.Citta
-    AND     P.CodiceProgetto = 'P02'
+  SELECT  S.Sede
+  FROM    Sedi S, Progetti P
+  WHERE   S.Citta = P.Citta
+  AND     P.CodiceProgetto = 'P02'
 )

@@ -8,8 +8,8 @@ AFTER UPDATE OF Salary ON Employee          -- Fa riferimento ad una singola tab
 REFERENCING NEW AS N OLD AS o
 FOR EACH ROW
 WHEN (N.Salary > (                          -- Condizione da verificare
-    SELECT Salary FROM Employee
-    WHERE EmpCode = N.EmpManager
+  SELECT Salary FROM Employee
+  WHERE EmpCode = N.EmpManager
 ))
 UPDATE Employee                             -- Azione da eseguire
 SET Salary = O.Salary
@@ -22,13 +22,13 @@ REFERENCING NEW AS N OLD AS o
 FOR EACH ROW
 WHEN (N.Salary > 200000)
 BEGIN ATOMIC
-    UPDATE Employee
-    BEGIN ATOMI
-    SET Salary = O.Salary
-    WHERE EmpCode = N.EmpCode;
+  UPDATE Employee
+  BEGIN ATOMI
+  SET Salary = O.Salary
+  WHERE EmpCode = N.EmpCode;
 
-    INSERT INTO SalaryAudit(EmpCode, OldSalary, NewSalary)
-    VALUES (N.EmpCode, O.Salary, N.Salary);
+  INSERT INTO SalaryAudit(EmpCode, OldSalary, NewSalary)
+  VALUES (N.EmpCode, O.Salary, N.Salary);
 END;
 
 -- Un trigger può attivarsi BEFORE o AFTER l'evento. Un trigger BEFORE può modificare i dati prima che vengano scritti nel DB, mentre un trigger AFTER può reagire alla modifica
@@ -45,8 +45,8 @@ NO CASCADE BEFORE INSERT ON Employee
 REFERENCING NEW AS NewEmp
 FOR EACH ROW
 WHERE (NewEmp.Salary > (
-    SELECT Salary FROM Employee
-    WHERE EmpCode = NewEmp.EmpManager
+  SELECT Salary FROM Employee
+  WHERE EmpCode = NewEmp.EmpManager
 ))
 SIGNAL SQLSTATE '70000'
 
@@ -60,12 +60,12 @@ REFERENCING NEW AS NewEmp
 FOR EACH ROW
 SET 
 NewEmp.Salary = (
-    SELECT MIN(Salary) FROM Employee
-    WHERE Dept = NewEmp.Dept
+  SELECT MIN(Salary) FROM Employee
+  WHERE Dept = NewEmp.Dept
 ),
 NewEmp.EmpManager = (
-    SELECT MgrCode From Department
-    WHERE DeptCode = NewEmp.Dept
+  SELECT MgrCode From Department
+  WHERE DeptCode = NewEmp.Dept
 )
 
 
@@ -97,11 +97,11 @@ NO CASCADE BEFORE INSERT ON Employee
 REFERENCING NEW AS N
 FOR EACH ROW
 IF (N.CodImp > 100) THEN
-    SIGNAL SQLSTATE '80000' ('Codice invalido');                -- Punto e virgola obbligatorio
+  SIGNAL SQLSTATE '80000' ('Codice invalido');                -- Punto e virgola obbligatorio
 ELSE 
-    SET N.Salary = (
-        SELECT MIN(Salary) FROM Employee
-        WHERE Dept = N.Dept
+  SET N.Salary = (
+    SELECT MIN(Salary) FROM Employee
+    WHERE Dept = N.Dept
 );                                                              -- Punto e virgola obbligatorio
 END IF
 
