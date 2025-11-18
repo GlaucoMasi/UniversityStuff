@@ -9,6 +9,8 @@
 -- Per la progettazione concettuale usiamo DB-MAIN:
 -- Virtuale 24/25: https://virtuale.unibo.it/pluginfile.php/2399902/mod_resource/content/0/L06.1.IntroduzioneDB-MAIN.pdf
 
+-- DB-MAIN supporta una serie di strumenti per modificare uno schema concettuale o per trasformarlo in uno schema logico:
+-- Virtuale 24/25: https://virtuale.unibo.it/pluginfile.php/2408577/mod_resource/content/0/L07.1.TrasformazioniDB-MAIN.pdf
 
 -- Il modello concettuale più usato è il Modello Entity-Relationship (E/R) e ne esistono diversi dialetti e varianti grafiche
 
@@ -62,7 +64,9 @@
 -- Subset: caso particolare di gerarchia in cui si evidenzia una sola classe specializzata
 
 
--------------- RIASSUNTO --------------
+-- ======================================================================
+-- ==========================   RIASSUNTO   =============================
+-- ======================================================================
 -- Uso dei meccanismi di astrazione:
 -- 1. Classificazione: definizione di entità (dalle istanze) e attributi (dai valori)
 -- 2. Aggregazione: definizione di entità (dagli attributi), associazioni (da entità e attributi) e attributi composti
@@ -87,7 +91,9 @@
 -- 3. Derivazione: <concetto> si ottiene <operazioni su concetti>
 
 
--------------- PATTERN DI PROGETTAZIONE --------------
+-- ======================================================================
+-- ====================   PATTERN DI PROGETTAZIONE   ====================
+-- ======================================================================
 -- Le aree di parcheggio: Un campeggio è diviso in più aree, ognuna caratterizzata da una certa tariffa
 -- Soluzione: Le aree sono istanze della stessa entità
 
@@ -102,3 +108,30 @@
 
 -- Si prende in prestito una copia, non un libro: Si vogliono mantenere informazioni sui libri, sui prestiti e sui danni apportati ai volumi
 -- Soluzione: Si creano le entità Libro, Utente e CopieLibro. CopieLibro è identificata esternamente tramite Libro. L'associazione Prestito unisce CopieLibro e Utenti e ha suoi attributi
+
+
+-- ======================================================================
+-- ===================   PROGETTAZIONE CONCETTUALE   ====================
+-- ======================================================================
+-- Un concetto non è di per sè un'entità, un'associazione, un attributo o altro, ma dipende dal contesto applicativo
+-- Regole guida:
+-- 1. Entità: ha proprietà significative e descrive oggetti con esistenza autonoma
+-- 2. Attributo: è semplice e non ha proprietà
+-- 3. Associazione: correla due o più concetti
+-- 4. Generalizzazione/Specializzazione: è un caso più generale/particolare di un altro
+
+-- Strategie di progettazione:
+-- 1. Top-Down: si parte da uno schema iniziale molto astratto ma completo, che viene raffinato per arrivare allo schema finale
+-- 2. Bottom-Up: si sviluppano semplici schemi parziali ma dettagliati per le varia specifiche, poi integrati tra loro
+-- 3. Inside-Out: si parte dai concetti più importante, che poi vengono espansi aggiungendo quelli correlati
+
+-- Di fatto si utilizza una strategia ibrida:
+-- 1. Si identificano i concetti importanti e si realizza uno schema scheletro che contiene quelli più importanti
+-- 2. Sulla base di questo si può decomporre
+-- 3. Infine si raffina, si espande e si integra
+
+-- Qualità di uno schema concettuale:
+-- 1. Correttezza: non deve presentare errori sintattici o semantici
+-- 2. Completezza: tutti i dati di interesse devono essere specificati
+-- 3. Leggibilità: riguarda anche aspetti prettamente estetici
+-- 4. Minimalità: talvolta è permessa la presenza di elementi ridondanti nello schema, per favorire l'esecuzione di certe operazioni
