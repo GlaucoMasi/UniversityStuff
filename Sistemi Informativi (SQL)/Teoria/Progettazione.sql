@@ -135,3 +135,95 @@
 -- 2. Completezza: tutti i dati di interesse devono essere specificati
 -- 3. Leggibilità: riguarda anche aspetti prettamente estetici
 -- 4. Minimalità: talvolta è permessa la presenza di elementi ridondanti nello schema, per favorire l'esecuzione di certe operazioni
+
+
+-- ======================================================================
+-- ======================   PROGETTAZIONE LOGICA   ======================
+-- ======================================================================
+-- L'obbiettivo della progettazione logica è trasformare lo schema concettuale in uno schema logico
+
+-- Il lavoro si divide in due fasi:
+-- 1. Progettazione fedele: lo schema finale deve essere equivalente a quello iniziale dal punto di vista della capacità informativa
+-- 2. Progettazione efficiente: si cerca di ottimizzare lo schema logico per migliorare l'efficienza delle operazioni più frequenti
+
+-- Progettazione fedele:
+-- Sat(DB) indica l'insieme delle istanze legali di uno schema, quindi Sat(DBconc) = Sat(DBrel)
+-- La progettazione logica di fatto definisce un mapping M che trasforma ogni istanza legale dello schema concettuale in una istanza legale dello schema relazionale
+-- Diciamo che la progettazione preserva l'informazione se M è totale e iniettiva
+
+-- Questa definizione in realtà non basta, perchè potrebbero esistere infinite istanze legali nello schema relazione che non lo sono in quello concettuale
+-- Quindi in realtà una progettazione garantisce l'equivalenza se preserva l'informazione
+-- e per ogni istanza legale dello schema relazionale esiste una istanza legale dello schema concettuale che viene mappata in essa
+-- Questo di fatto equivale a dire che esiste una biiezione tra gli i due insiemi di istanze legali
+-- La definizione data può essere usata localmente, quindi la traduzione viene operata attraverso una sequenza di traduzioni semplici,
+-- per ognuna delle quali è facile dare regole che garantiscano l'equivalenza
+-- Riassumento, abbiamo regole che preservano l'informazione (sulla struttura) e regole che garantiscono l'equivalenza (sui vincoli)
+
+-- Traduzioni di schemi E/R semplici:
+-- 1. Entità e associazioni, ma non gerarchie
+-- 2. Ogni entità ha un singolo identificatore, ed è interno
+-- 3. Non ci sono attributi ripetuti
+
+-- Regole di traduzione:
+-- 1. Entità: Ogni entità diventa una relazione con gli stessi attributi. La chiave primaria coincide con l'identificatore dell'entità.
+-- Se un attributo è opzionale, si usa l'asterisco per indicare la possibilità di valori nulli
+-- 2. Associazione: Ogni associazione diventa una relazione con gli stessi attributi, a cui si aggiungono gli identificatori di tutte le entità che collega.
+-- Gli identificatori delle entità collegate costituiscono una superchiave. La chiave primaria dipende dalle cardinalità massime delle entità coinvolte
+-- 3. Foreign Key: Spesso conviene cambiare i nomi delle primary key referenziate, per essere più espressivi
+-- 4. Attributi composti: Gli attributi composti vengono tradotti suddividendoli ricorsivamente nelle loro componenti.
+-- È consigliabile usare un prefisso comune per gli attributi che si ottengono nella relazione finale
+-- 5. Entità con identificazione esterna: Nel caso di entità identificate esternamente, si importa l'identificatore dell'entità identificante. Se ci sono più identificazioni
+-- esterne in cascata, bisogna partire dalle entità non identificate esternamente e propagare gli indentificatori così ottenuti
+-- 6. Entità con più identificatori: Per scegliere quale identificatore usare come chiave primaria, si considerano: assenza di opzionalità, semplicità e utilizzo
+-- nelle operazioni più frequenti ed importanti. Se nessuno soddisfa questi requisiti, si può introdurre un nuovo attributo codice
+-- 7. Gerarchie: Il modello non può rappresentare direttamente le generalizzazioni, quindi vengono sostituite con entità e associazioni.
+-- Ci sono tre strategie principali (più altre soluzioni intermedie o ibride):
+-- a) Collasso verso l'alto: si accorpano le entità figlie nel genitore
+-- b) Collasso verso il basso: si accorpano le entità genitore nelle figlie
+-- c) Traduzione indipendente: la generalizzazione viene sostituita da una associazione
+-- 8. Attributi multivalore: In ogni caso bisogna creare una nuova entità, ma ci sono due possibilità:
+-- a) Creare una nuova entità che contiene i valori semplici dell'attributo ed è identificata esternamente dall'entità originale
+-- b) Creare una nuova entità che contiene i valori semplici dell'attributo ed è indetificata solo da questi
+
+-- Chiave primaria nei diversi tipi di Associazione:
+-- Molti a Molti -> unione degli identificatori delle entità coinvolte
+-- Uno a Molti -> identificatore dell'entità con cardinalità massima 1
+-- Uno a Uno -> identificatore di una delle due entità coinvolte, in base alla loro importanza relativa. L'altro diventa una chiave alternativa
+
+-- Alternative per associazioni uno a molte: si può utilizzare una traduzione più compatta, inglobando l'associazione nell'entità con cardinalità massima 1
+-- Questo equivale ad aggiungere i dati dell'entità con cardinalità massima n come attributi dell'entità con cardinalità massima 1
+-- Il vantaggio che se ne trae è una semplificazione delle query e una riduzione del numero di join, che porta a migliori prestazioni
+-- Bisogna però fare attenzione se l'entità con cardinalità massima 1 ha partecipazione opzionale nell'associazione, perchè in questo caso si possono avere valori nulli
+-- Questo è tollerabile se questi casi sono relativamente pochi, sennò c'è uno spreco inutile di spazio
+-- Questa soluzione si può applicare anche alle associazioni uno a molti ad anello
+
+-- Alternative per associazioni uno a uno: anche in questo caso si può inglobare l'associazione in una delle due entità coinvolte
+-- La scelta di quale entità inglobare e di quale mantenere dipende dall'importanza relativa delle due entità e dalla partecipazione obbligatoria o opzionale
+-- Se una delle due entità ha partecipazione opzionale nell'associazione questa soluzione è sconsigliata per spreco di spazio
+-- Nella scelta della chiave primaria bisogna considerare le cardinalità minime, introducendo un codice se entrambe le chiavi possono avere valori nulli
+-- Questa soluzione si può applicare anche alle associazioni uno a uno ad anello
+
+-- Problematica relativa all'equivalenza: Per tradurre un'associazione A a cui partecipa un'entità E, in cui min-card(E, A) = 1 e max-card(E, A) = n,
+-- Non possiamo inglobare l'associazione in E, perchè E può partecipare a più istanze di A. Quindi il DDL non può controllare che ogni istanza di E partecipi ad almeno una istanza di A
+
+-- Collasso verso l'alto:
+-- Tutti gli attributi che apparivano nelle entità figlie ora sono opzionali nella entità genitore. Inoltre si aggiunge un attributo tipo.
+-- È necessario anche un vincolo che sincronizzi i valori di Tipo con quelli degli attributi specifici delle sottoclassi. In base alla copertura della gerarchia cambia l'attributo selettore:
+-- 1. Totale Esclusiva: Tipo ha N valori
+-- 2. Parziale Esclusiva: Tipo ha N+1 valori (uno per ogni sottoclasse + uno per le istanze non appartenenti a nessuna sottoclasse)
+-- 3. Sovrapposta: Tipo è un insieme di flag booleane, uno per ogni sottoclasse. Se la copertura è totale, almeno un flag deve essere true
+-- Le associazioni connesse alle entità figlie vengono collegate al genitore e le cardinalità minime diventano tutte 0
+
+-- Collasso verso il basso:
+-- Vengono create N relazioni, una per ogni entità figlia, che contengono gli attributi specifici di ogni sottoclasse e gli attributi della superclasse
+-- Se la gerarchia è esclusiva, il vincolo viene perso perchè il DDL non ha modo di garantire che che una istanza della superclasse appaia in una sola delle sottoclassi
+-- Non si può fare se la copertura non è completa, mentre introduce ridondanza se la copertura non è esclusiva
+
+-- Traduzione indipendente:
+-- Si generano N+1 relazioni, una per la superclasse e una per ogni sottoclasse. Nella superclasse viene aggiunto un attributo selettore.
+-- La superclasse partecipa all'associazione con cardinalità 0-1, mentre le sottoclassi partecipano con cardinalità 1-1
+-- Anche in questo caso se la gerarchia è esclusiva il vincolo viene perso. Si può utilizzare l'attributo Tipo per aggiungere un vincolo di CHECK alle sottoclassi
+
+-- Soluzione ibrida:
+-- Spesso conviene usare soluzioni miste, ad esempio applicando il collasso verso l'alto per le sottoclassi più piccole
+-- e la traduzione indipendente per quelle più grandi che sono coinvolte in associzioni con altre entità
