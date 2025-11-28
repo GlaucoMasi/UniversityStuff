@@ -363,8 +363,8 @@
 
 -- Riassunto:
 -- Una forma normale è una proprietà di uno schema relazionale che ne garantisce la qualità, cioè l’assenza di determinati difetti
--- Una relazione non normalizzata presenta ridondanze e dà luogo a comportamenti poco desiderabili durante gli aggiornamenti
--- La definizione delle forme normali (3NF e BCNF) si basa sul vincolo di dipendenza funzionale (FD)
--- Normalizzare uno schema significa decomporlo in sottoschemi
--- Ogni decomposizione deve essere senza perdita, ovvero deve permettere di ricostruire esattamente la relazione originaria non decomposta
--- È auspicabile che la decomposizione preservi le FD, al fine di evitare query di verifica (o trigger) che garantiscano che i vincoli siano rispettati
+-- Una relazione non normalizzata presenta ridondanze e dà luogo a comportamenti poco desiderabili durante gli aggiornamenti
+-- La definizione delle forme normali (3NF e BCNF) si basa sul vincolo di dipendenza funzionale (FD)
+-- Normalizzare uno schema significa decomporlo in sottoschemi
+-- Ogni decomposizione deve essere senza perdita, ovvero deve permettere di ricostruire esattamente la relazione originaria non decomposta
+-- È auspicabile che la decomposizione preservi le FD, al fine di evitare query di verifica (o trigger) che garantiscano che i vincoli siano rispettati
