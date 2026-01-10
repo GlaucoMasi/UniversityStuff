@@ -1,0 +1,29 @@
+-- 1) Per ogni categoria, la media del rapporto Rimborso/Prezzo per i soli prodotti con più di un reclamo
+WITH PRODOTTISPEC(ProdID, Categoria, Prezzo) AS (
+	SELECT	p.PRODID, p.CATEGORIA, p.PREZZO 
+	FROM	PRODOTTI p, RECLAMI r
+	WHERE	p.PRODID = r.PRODID
+	GROUP BY	p.PRODID, p.CATEGORIA, p.PREZZO
+	HAVING	COUNT(r.RID) > 1
+)
+SELECT	p.CATEGORIA, AVG(1.0*e.RIMBORSO/p.PREZZO) AS AVG_RAPPORTO
+FROM	PRODOTTISPEC p, RECLAMI r, ESITI e
+WHERE	p.PRODID = r.PRODID
+AND		r.RID = e.RID
+AND		e.ESITO = 'RIMBORSO'
+GROUP BY	p.CATEGORIA;
+
+-- 2) La categoria per cui i reclami con esito definito sono stati in media più veloci
+WITH VELOCITA_CATEGORIA(Categoria, AVG_Giorni) AS (
+	SELECT	p.CATEGORIA, AVG(1.0*(DAYS(e.DATAESITO)-DAYS(r.DATA)))
+	FROM	PRODOTTI p, RECLAMI r, ESITI e
+	WHERE	p.PRODID = r.PRODID
+	AND		r.RID = e.RID
+	GROUP BY	p.CATEGORIA
+)
+SELECT	c1.Categoria, c1.AVG_GIORNI 
+FROM	VELOCITA_CATEGORIA c1
+WHERE	c1.AVG_GIORNI <= ALL (
+	SELECT c2.AVG_GIORNI
+	FROM	VELOCITA_CATEGORIA c2
+);
