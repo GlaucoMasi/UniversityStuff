@@ -47,7 +47,7 @@
 -- Partecipazione obbligatoria di E1 in A: la cardinalità minima di E1 in A è 1
 -- Partecipazione opzionale di E1 in A: la cardinalità minima di E1 in A è 0
 
--- Identificatore esterne: c'è la possibilità di identificare un'entità tramite altre (una o più) entità con cui è in associazione
+-- Identificatore esterno: c'è la possibilità di identificare un'entità tramite altre (una o più) entità con cui è in associazione
 -- Ad esempio: uno Studente è identificato univocamente attraverso la matricola solo nel contesto della sua Università
 -- Se una entità E1 è identificata esternamente attraverso un'associazione, allora max-card(E1, A) = 1. Se basta E2 per identificare E1, allora min-card(E2, A) = 1
 
