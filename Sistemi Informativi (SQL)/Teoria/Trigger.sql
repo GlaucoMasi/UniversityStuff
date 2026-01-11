@@ -48,7 +48,7 @@ WHERE (NewEmp.Salary > (
   SELECT Salary FROM Employee
   WHERE EmpCode = NewEmp.EmpManager
 ))
-SIGNAL SQLSTATE '70000'
+SIGNAL SQLSTATE '70000' ('Salario troppo alto')
 
 -- Le azioni di un before trigger possono essere:
 -- 1. SELECT

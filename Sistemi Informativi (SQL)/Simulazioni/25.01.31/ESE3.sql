@@ -1,20 +1,20 @@
 -- 3.2)
 create table AZIONI (
-     Nome varchar(20) not NULL PRIMARY KEY,
-     Valore DEC(8, 2) not NULL CHECK(Valore > 0)
+  Nome varchar(20) not NULL PRIMARY KEY,
+  Valore DEC(8, 2) not NULL CHECK(Valore > 0)
 );
 
 create table PORTAFOGLI (
-     PID char(10) not NULL PRIMARY KEY,
-     ValoreTotale DEC(8, 2) not NULL CHECK(ValoreTotale > 0),
-     WARNING SMALLINT not NULL DEFAULT 0 CHECK(WARNING IN (0, 1))
+  PID char(10) not NULL PRIMARY KEY,
+  ValoreTotale DEC(8, 2) not NULL CHECK(ValoreTotale > 0),
+  WARNING SMALLINT not NULL DEFAULT 0 CHECK(WARNING IN (0, 1))
 );
 
 create table AP (
-     Nome varchar(20) not NULL REFERENCES AZIONI,
-     PID char(10) not NULL REFERENCES PORTAFOGLI,
-     Quantita INT not NULL CHECK(Quantita > 0),
-     constraint ID_AP_ID primary key (PID, Nome)
+  Nome varchar(20) not NULL REFERENCES AZIONI,
+  PID char(10) not NULL REFERENCES PORTAFOGLI,
+  Quantita INT not NULL CHECK(Quantita > 0),
+  constraint ID_AP_ID primary key (PID, Nome)
 );
 
 -- 3.3)
