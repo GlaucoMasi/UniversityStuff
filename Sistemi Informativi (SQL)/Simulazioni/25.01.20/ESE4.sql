@@ -1,0 +1,58 @@
+-- 4.1)
+create table E1 (
+  K1 INT not NULL PRIMARY KEY,
+  A INT not null,
+  B INT,
+  C INT,
+  TIPO SMALLINT not NULL CHECK(TIPO IN (2, 3)),
+  K1R2 INT REFERENCES E1,
+  CHECK((TIPO = 2 AND B IS NOT NULL AND C IS NULL AND K1R2 IS NULL) OR (TIPO = 3 AND C IS NOT NULL AND K1R2 IS NOT NULL AND B IS NULL))
+);
+
+create table R1 (
+  X_K1 INT not NULL REFERENCES E1,
+  Y_K1 INT not NULL REFERENCES E1,
+  D INT not null,
+  primary key (X_K1, Y_K1)
+);
+
+-- 4.2)
+CREATE OR REPLACE TRIGGER C_R1
+BEFORE INSERT ON R1
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	EXISTS (
+		SELECT	*
+		FROM	E1 e1
+		WHERE	e1.K1R2 = N.Y_K1
+	)
+)
+SIGNAL SQLSTATE '70000' ('La tupla inserita in R1 non rispetta il vincolo del punto c!')
+
+CREATE OR REPLACE TRIGGER C_E1
+BEFORE INSERT ON E1
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	EXISTS (
+		SELECT	*
+		FROM	R1 r1
+		WHERE	r1.Y_K1 = N.K1R2
+	)
+)
+SIGNAL SQLSTATE '70001' ('La tupla inserita in E1 non rispetta il vincolo del punto c!')
+
+CREATE OR REPLACE TRIGGER R2_REF_E2
+BEFORE INSERT ON E1
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	EXISTS (
+		SELECT	*
+		FROM	E1
+		WHERE	TIPO = 3
+		AND		K1 = N.K1R2
+	)
+)
+SIGNAL SQLSTATE '70002' ('La tupla E3 inserita fa riferimento ad una tupla non di tipo E2!');

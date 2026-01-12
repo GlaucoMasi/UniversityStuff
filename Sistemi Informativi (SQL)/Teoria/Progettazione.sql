@@ -55,7 +55,7 @@
 -- Ogni sottoclasse eredita attributi e associazioni della superclasse, quindi ogni attributo va definito nell'entità più generale in cui è presente
 -- Le generalizzazione può essere:
 -- 1. Totale: la superclasse è l'unione delle sottoclassi
--- 2. Parziale: la superclasse contiene anche istanze che non appartengono a nessuna sottoclasse e istanze che appartengono a più sottoclassi
+-- 2. Parziale: la superclasse contiene anche istanze che non appartengono a nessuna sottoclasse
 -- e anche:
 -- 1. Esclusiva: le sottoclassi sono tra loro disgiunte
 -- 2. Sovrapposta: le sottoclassi possono avere istanze in comune

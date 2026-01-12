@@ -1,0 +1,48 @@
+-- 4.1)
+create table E1 (
+  K1 INT not NULL PRIMARY KEY,
+  A INT not null,
+  B INT,
+  Tipo SMALLINT not NULL CHECK(Tipo IN (1, 2)),
+  CHECK((Tipo = 1 AND B IS NULL) OR (Tipo = 2 AND B IS NOT NULL))
+);
+
+create table E3 (
+  K3 INT not NULL PRIMARY KEY,
+  R1_E2 INT REFERENCES E1,
+  R1_E1 INT REFERENCES E1,
+  C1 INT,
+  C2 INT,
+	CHECK((R1_E1 IS NULL AND R1_E2 IS NULL) OR (R1_E1 IS NOT NULL AND R1_E2 IS NOT NULL)),
+	CHECK(C1 IS NOT NULL OR C2 IS NULL)
+);
+
+-- 4.2)
+CREATE OR REPLACE TRIGGER CHECK_R1_E2
+BEFORE INSERT ON E3
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	EXISTS (
+		SELECT	*
+		FROM	E1
+		WHERE	Tipo = 1
+		AND		N.R1_E2 = K1
+	)
+)
+SIGNAL SQLSTATE '70000' ('La tupla inserita in E3 fa riferimento attraverso R1 a tuple di tipo sbagliato!');
+
+CREATE OR REPLACE TRIGGER C_E3
+BEFORE INSERT ON E3
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	EXISTS (
+		SELECT	*
+		FROM	E1 a, E1 b
+		WHERE	a.K1 = N.R1_E1
+		AND		b.K1 = N.R1_E2
+		AND		N.C1 * COALESCE(N.C2, 1) <= a.A*b.B
+	)
+)
+SIGNAL SQLSTATE '70001' ('La tupla inserita in E3 non rispetta il punto C!');

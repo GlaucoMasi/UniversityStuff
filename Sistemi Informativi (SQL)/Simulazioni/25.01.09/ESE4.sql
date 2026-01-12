@@ -1,0 +1,51 @@
+-- 4.1)
+create table E1 (
+  K1 INT not NULL PRIMARY KEY,
+  A INT not null
+);
+
+create table E2 (
+  K2 INT not NULL PRIMARY KEY,
+  B INT not null,
+  R1_K1 INT not NULL REFERENCES E1
+);
+
+create table E3 (
+  C INT not NULL,
+  D INT,
+  R3_K1 INT REFERENCES E1,
+  R2_K2 INT not NULL REFERENCES E2,
+  R2_K1 INT not NULL REFERENCES E1,
+  CHECK((D IS NULL AND R3_K1 IS NULL) OR (D IS NOT NULL AND R3_K1 IS NOT NULL)),
+PRIMARY KEY(C, R2_K2)
+);
+
+-- 4.2)
+CREATE OR REPLACE TRIGGER B_E3
+BEFORE INSERT ON E3
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	EXISTS (
+		SELECT	*
+		FROM	E2
+		WHERE	K2 = N.R2_K2
+		AND		R1_K1 = N.R2_K1
+	)
+)
+SIGNAL SQLSTATE '70001' ('La tupla inserita associa tramite R2 istanze di E1 e E2 già associate tramite R1');
+
+CREATE OR REPLACE TRIGGER C_E3
+BEFORE INSERT ON E3
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	N.R3_K1 IS NOT NULL
+	AND EXISTS (
+		SELECT	*
+		FROM	E3
+		WHERE	R2_K2 = N.R2_K2
+		AND		R3_K1 IS NOT NULL
+	)
+)
+SIGNAL SQLSTATE '70002' ('Esiste già in E3 una tupla che partecipa ad R3 identificata dalla stessa istanza di E2');
