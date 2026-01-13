@@ -1,0 +1,45 @@
+-- 4.1)
+create table E3 (
+  K3 INT not NULL PRIMARY KEY,
+  C INT not null,
+  Tipo SMALLINT not NULL CHECK(Tipo IN (2, 3)),
+  K2 INT,
+  B INT,
+  CHECK((Tipo = 2 AND K2 IS NOT NULL AND B IS NOT NULL) OR (Tipo = 3 AND K2 IS NULL AND B IS NULL))
+);
+
+create table E1 (
+  K1 INT not NULL PRIMARY KEY,
+  A INT not null,
+  K3R3 INT not NULL REFERENCES E3,
+  DR1 INT,
+  K2R1 INT,
+  CHECK((DR1 IS NULL AND K2R1 IS NULL) OR (DR1 IS NOT NULL AND K2R1 IS NOT NULL))
+);
+
+-- 4.2)
+CREATE OR REPLACE TRIGGER K2_UNIQUE
+BEFORE INSERT ON E3
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	EXISTS (
+		SELECT	*
+		FROM	E3
+		WHERE	K2 = N.K2
+	)
+)
+SIGNAL SQLSTATE '70000' ('La tupla inserita in E3 fa riferimento ad una istanza di E2 già presente');
+
+CREATE OR REPLACE TRIGGER R1E2
+BEFORE INSERT ON E1
+REFERENCING NEW AS N
+FOR EACH ROW
+WHEN (
+	N.K2R1 IS NOT NULL AND NOT EXISTS (
+		SELECT	*
+		FROM	E3
+		WHERE	K2 = N.K2R1
+	)
+)
+SIGNAL SQLSTATE '70001' ('La tupla inserita in E1 fa riferimento attraverso R1 ad una istanza di E2 inesistente');

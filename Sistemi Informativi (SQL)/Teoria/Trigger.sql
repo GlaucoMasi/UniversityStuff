@@ -102,7 +102,7 @@ ELSE
   SET N.Salary = (
     SELECT MIN(Salary) FROM Employee
     WHERE Dept = N.Dept
-);                                                              -- Punto e virgola obbligatorio
+  );                                                          -- Punto e virgola obbligatorio
 END IF
 
 
