@@ -156,27 +156,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Microkernel.md",
+                "file": "Processi.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Microkernel"
-            }
-          },
-          {
-            "id": "9fad1daf6456ac42",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "Outline of Processi"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -197,7 +187,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "6f6d722335ded216",
+  "active": "9635ed83dfd08363",
   "lastOpenFiles": [
     "Excalidraw/Drawing 2026-02-22 10.30.25.excalidraw.md",
     "Processi.md",
