@@ -1,3 +1,5 @@
+In un sistema multiprogrammato o time sharing, ogni job ha un suo spazio di indirizzi e non deve poter accedere ad aree di memoria esterne al proprio spazio.
+
 **Es. Architettura Intel IA32**
 2 bit di protezione --> 4 modi/ring
 

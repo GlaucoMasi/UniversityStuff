@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4ae5dc8d6e002ab7",
+        "id": "d7db3c4f343b4985",
         "type": "tabs",
         "children": [
           {
-            "id": "6f6d722335ded216",
+            "id": "7c850ab0539e745f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Processi.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Processi"
+              "title": "New tab"
             }
           }
         ]
@@ -156,13 +152,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Processi.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Processi"
+              "title": "Outline"
             }
           }
         ],
@@ -170,7 +165,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,40 +175,43 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false,
-      "notebook-navigator:Notebook Navigator": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "bases:Create new base": false
     }
   },
-  "active": "9635ed83dfd08363",
+  "active": "7c850ab0539e745f",
   "lastOpenFiles": [
+    "Modi di Funzionamento.md",
+    "Sistemi Operativi.md",
+    "System Calls.md",
+    "System call.png",
+    "Interruzioni.md",
+    "Protezione.md",
+    "[[Interruzioni]].md",
+    "Protezione della CPU.md",
+    "Protezione della Memoria.md",
+    "Sicurezza.md",
+    "Protezione e Sicurezza.md",
+    "Sistema Multiprogrammato.md",
+    "Sistema Operativo base.png",
+    "Architettura di un sistema di elaborazione.png",
+    "Monitor.md",
+    "Interfacce di rete.md",
+    "Memoria Virtuale.md",
+    "Untitled.base",
+    "Untitled 1.base",
     "Excalidraw/Drawing 2026-02-22 10.30.25.excalidraw.md",
     "Processi.md",
     "Excalidraw",
-    "Struttura dei SO.md",
     "Struttura Monolitica.md",
     "Struttura Modulare.md",
     "Kernel.md",
     "Microkernel.md",
-    "Protezione e Sicurezza.md",
     "Memoria Centrale.md",
     "Dispositivi di IO.md",
     "File System.md",
-    "System Calls.md",
-    "Protezione della memoria.md",
     "system call.md",
     "Macchine Virtuali.md",
-    "Sistema Multiprogrammato.md",
-    "Interfaccia utente e programmatore.md",
-    "Interfaccia programmatore.md",
-    "Interfaccia utente/programmatore.md",
     "Interfaccia utente",
-    "Memoria Secondaria.md",
-    "dispositivi di I/O.md",
-    "dispositivi di I",
-    "2026-02-20.md",
-    "Welcome.md"
+    "dispositivi di I"
   ]
 }
