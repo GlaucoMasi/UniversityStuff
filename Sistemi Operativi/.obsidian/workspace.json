@@ -1,0 +1,229 @@
+{
+  "main": {
+    "id": "eec2ca1dffb03909",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ae5dc8d6e002ab7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6f6d722335ded216",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Processi.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Processi"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1852ad9a01642775",
+    "type": "split",
+    "children": [
+      {
+        "id": "721f1d3160ba9d06",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "17cc5f4a260962e8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0b68b3c871569802",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "fee7813c4adb337a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "265b5d6ec975c9b8",
+    "type": "split",
+    "children": [
+      {
+        "id": "7775541b08d30382",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b46cb034dde8b5dd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Microkernel.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Microkernel"
+            }
+          },
+          {
+            "id": "bdd2444fa8a3230f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Microkernel.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Microkernel"
+            }
+          },
+          {
+            "id": "29013762463fec4b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "cb28e564dd1482a2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "9635ed83dfd08363",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Microkernel.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Microkernel"
+            }
+          },
+          {
+            "id": "9fad1daf6456ac42",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
+      "file-tree-alternative:File Tree Alternative Plugin": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "6f6d722335ded216",
+  "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-02-22 10.30.25.excalidraw.md",
+    "Processi.md",
+    "Excalidraw",
+    "Struttura dei SO.md",
+    "Struttura Monolitica.md",
+    "Struttura Modulare.md",
+    "Kernel.md",
+    "Microkernel.md",
+    "Protezione e Sicurezza.md",
+    "Memoria Centrale.md",
+    "Dispositivi di IO.md",
+    "File System.md",
+    "System Calls.md",
+    "Protezione della memoria.md",
+    "system call.md",
+    "Macchine Virtuali.md",
+    "Sistema Multiprogrammato.md",
+    "Interfaccia utente e programmatore.md",
+    "Interfaccia programmatore.md",
+    "Interfaccia utente/programmatore.md",
+    "Interfaccia utente",
+    "Memoria Secondaria.md",
+    "dispositivi di I/O.md",
+    "dispositivi di I",
+    "2026-02-20.md",
+    "Welcome.md"
+  ]
+}
