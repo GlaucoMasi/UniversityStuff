@@ -1,3 +1,4 @@
+[[UNIX]]
 ### SO e Hardware
 Il SO è un programma (o un insieme di programmi) che fa da **intermediario** tra l'utente e l'hardware del computer:
 - fornisce una visione **astratta e semplificata** dell'HW
@@ -45,5 +46,5 @@ Le componenti non sono indipendenti tra loro, ma **interagiscono**.
 Ci sono varie soluzioni:
 - [[Struttura Monolitica]]
 - [[Struttura Modulare]]
-- [[Microkernel]]
+- [[Microkernel]] (e Kernel Ibridi)
 - [[Macchine virtuali]]
