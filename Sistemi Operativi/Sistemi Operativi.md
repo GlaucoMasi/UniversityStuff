@@ -10,7 +10,7 @@ Interfaccia i programmi con le risorse HW mappandole in **risorse logiche**, acc
 - CPU  -->  [[Processi]]
 - [[Memoria Secondaria]]  -->  [[File System]]
 - [[Memoria Centrale]]  -->  [[Memoria Virtuale]]
-- [[Dispositivi di IO]]  -->  ...
+- [[Dispositivi di I∕O]]  -->  ...
 - [[Interfacce di rete]]  -->  ...
 
 ### Aspetti importanti di un SO
@@ -37,7 +37,7 @@ Interfaccia i programmi con le risorse HW mappandole in **risorse logiche**, acc
 - Gestione dei [[processi]]
 - Gestione della [[memoria centrale]]
 - Gestione di [[memoria secondaria]] e [[file system]]
-- Gestione dei [[dispositivi di IO]]
+- Gestione dei [[Dispositivi di I∕O]]
 - [[Protezione]] e [[Sicurezza]]
 - [[Interfaccia utente e programmatore]]
 Le componenti non sono indipendenti tra loro, ma **interagiscono**.

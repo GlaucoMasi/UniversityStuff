@@ -46,9 +46,10 @@ L'immagine di un processo è **l'insieme delle aree di memoria e strutture dati*
 **System calls per la gestione dei processi:** [[System Calls in UNIX#Per la gestione dei processi|System Calls]]
 
 ### Inizializzazione dei processi UNIX
+La prima shell si chiama **shell di login**
 ![[Inizializzazione dei processi UNIX.png]]
 
-Dopo il login, sarà le shell a forkarsi per ogni nuovo processo.
+Dopo il login, sarà la shell a forkarsi per ogni nuovo processo.
 ![[Generazione di Processi.png]]
 
 Ogni utente può interagisce con lo shell mediante l'invocazione di comandi. Ogni comando è presente nel file system come file eseguibile (in `/bin`). Per ogni comando, la shell genera un processo figlio dedicato alla sua esecuzione.

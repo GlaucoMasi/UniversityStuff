@@ -24,7 +24,7 @@
             }
           },
           {
-            "id": "dfc4ab17f2078488",
+            "id": "0b0d6256bbdf3771",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -38,129 +38,13 @@
             }
           },
           {
-            "id": "34b9d33db519d35b",
+            "id": "dfc4ab17f2078488",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Processi UNIX.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Processi UNIX"
-            }
-          },
-          {
-            "id": "4f63c4bd267262c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "System Calls in UNIX.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "System Calls in UNIX"
-            }
-          },
-          {
-            "id": "714f7aa1b774e289",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "exec().md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "exec()"
-            }
-          },
-          {
-            "id": "7e1e6cf2e8c3dc22",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wait().md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "wait()"
-            }
-          },
-          {
-            "id": "1c91a1f45dfa845e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wait().md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "wait()"
-            }
-          },
-          {
-            "id": "399daa33d4d6bab1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "exit().md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "exit()"
-            }
-          },
-          {
-            "id": "219623b05edb98a5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "fork().md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "fork()"
-            }
-          },
-          {
-            "id": "f1456aed44ab7c1d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Creazione di processi.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Creazione di processi"
-            }
-          },
-          {
-            "id": "b8ac99a41fe79dca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Swapping.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Swapping"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ],
@@ -299,13 +183,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Processi UNIX.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Processi UNIX"
+              "title": "Outline"
             }
           }
         ],
@@ -326,25 +209,31 @@
       "bases:Create new base": false
     }
   },
-  "active": "34b9d33db519d35b",
+  "active": "dfc4ab17f2078488",
   "lastOpenFiles": [
+    "GNU∕Linux.md",
+    "Comandi UNIX.md",
+    "UNIX.md",
+    "Untitled.md",
+    "Esempio ls.png",
+    "Sistemi Operativi.md",
+    "Dispositivi di I∕O.md",
+    "Processi.md",
+    "e.md",
+    "Swapping.md",
+    "Creazione di processi.md",
+    "fork().md",
+    "exit().md",
+    "wait().md",
+    "exec().md",
+    "System Calls in UNIX.md",
+    "Processi UNIX.md",
     "Foreground vs Background.png",
     "Interazione mediante shell.png",
     "Generazione di Processi.png",
     "Inizializzazione dei processi UNIX.png",
-    "UNIX.md",
-    "Sistemi Operativi.md",
-    "Processi UNIX.md",
-    "Processi.md",
-    "System Calls in UNIX.md",
-    "exec().md",
-    "wait().md",
     "Terminazione di processi.md",
-    "exit().md",
-    "fork().md",
-    "Creazione di processi.md",
     "Threads.md",
-    "Swapping.md",
     "User Structure.md",
     "Process Structure.md",
     "Effetti della forkI().png",
@@ -352,18 +241,12 @@
     "Context switch.png",
     "Creazione di processi.png",
     "Gerarchie di processi.png",
-    "Immagine di un processo UNIX.png",
     "Process Control Block.md",
     "Memoria Secondaria.md",
-    "Stati di un processo.png",
     "google.com.md",
     "Struttura Modulare.md",
     "Struttura Monolitica.md",
     "Thread.md",
-    "Protezione.md",
-    "Struttura.md",
-    "Macchine Virtuali.md",
-    "Sicurezza.md",
     "Untitled.base",
     "Untitled 1.base",
     "Excalidraw",
