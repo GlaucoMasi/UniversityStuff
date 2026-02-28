@@ -66,6 +66,21 @@ Le operazioni di scheduling determinano un overhead che dipende da:
 Esistono SO che prevedono **processi leggeri** ([[Threads]]) che hanno la proprietà di **condividere codice e dati** con altri processi.
 => dimensione PCB ridotta => riduzione overhead
 
+### Interazioni tra processi
+Possiamo classificare i processi come:
+- **indipendenti:** se l'esecuzione di P1 non è influenzata da P2, e viceversa
+- **interagenti:** se l'esecuzione di P1 è influenzata dall'esecuzione di P2, e/o viceversa
+
+**Tipi di interazione:**
+- **Cooperazione:** interazione prevedibile e desiderata, insita nella logica del programma concorrente. I processi cooperanti collaborano per il raggiungimento di un fine comune
+- **Competizione:** interazione prevedibile ma non desiderata tra processi che interagiscono per sincronizzarsi nell'accesso a risorse comuni
+- **Interferenza:** interazione non prevista e non desiderata, potenzialmente deleteria tra processi
+
+**Supporto all'interazione**
+L'interazione tra processi interagenti può essere realizzata mediante:
+- **Memoria condivisa, modello ad ambiente globale, tra threads:** il SO consente ai threads di condividere variabili. L'interazione avviene tramite l'accesso a variabili condivise. Il SO prevede meccanismi per imporre dei **vincoli di sincronizzazione nell'accesso alle variabili condivise**
+- **Scambio di messaggi, modello ad ambiente locale, tra processi pesanti:** i processi non condividono variabili e interagiscono mediante meccanismi di trasmissione/ricezione di messaggi. Il SO prevede meccanismi a supporto dello scambio di messaggi
+
 ### Operazioni sui processi
 Ogni SO multiprogrammato prevede dei meccanismi per la gestione dei processi:
 - [[Creazione di processi]]
@@ -73,4 +88,5 @@ Ogni SO multiprogrammato prevede dei meccanismi per la gestione dei processi:
 - interazioni tra processi
 Queste operazioni richiede il massimo livello di privilegio, quindi vanno eseguite in modo kernel 
 =>  definizione di [[System Calls]]
+
 
