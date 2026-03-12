@@ -44,11 +44,14 @@ In un sistema **monoprocessore** e **multiprogrammato**
 ### Rappresentazione dei processi
 Ad ogni processo viene associata una struttura dati (**descrittore**): [[Process Control Block]] (**PCB**).
 
-### Scheduling e Cambio di contesto
+### [[Scheduling della CPU|Scheduling]] e Cambio di contesto
+Lo [[Scheduling della CPU]] è fondamentale in ogni [[Sistema Multiprogrammato]] per massimizzare il tempo di utilizzo della CPU ed evitare che sia idle.
+
+Il **Dispatcher** è la parte di SO che realizza il **context switch**.
 Quando avviene un **cambio di contesto**, si usano i PCB per salvare e ripristinare gli stati dei processi.
 ![[Context switch.png]]
 
-Lo **scheduler a breve termine** gestisce la **Coda dei processi pronti (ready queue)**, la cui strategia di gestione dipende dalle politiche (algoritmi) di scheduling adottate dal SO. Questa coda contiene i PCB dei processi che si trovano in stato Ready.
+Lo **scheduler a breve termine** gestisce la **Coda dei processi pronti (ready queue)**, la cui strategia di gestione dipende dagli [[Algoritmi di Scheduling]] adottati dal SO. Questa coda contiene i PCB dei processi che si trovano in stato Ready.
 Tra le altre strutture dati necessarie ci sono ad esempio le **code di waiting**, una per ogni tipo di attesa (dispositivi I/O, timer, ...), che contengono i PCB dei processi in stato Waiting in attesa di uno specifico tipo di evento.
 ![[Code di Scheduling.png]]
 
@@ -67,14 +70,16 @@ Esistono SO che prevedono **processi leggeri** ([[Threads]]) che hanno la propri
 => dimensione PCB ridotta => riduzione overhead
 
 ### Interazioni tra processi
-Possiamo classificare i processi come:
-- **indipendenti:** se l'esecuzione di P1 non è influenzata da P2, e viceversa
-- **interagenti:** se l'esecuzione di P1 è influenzata dall'esecuzione di P2, e/o viceversa
-
 **Tipi di interazione:**
 - **Cooperazione:** interazione prevedibile e desiderata, insita nella logica del programma concorrente. I processi cooperanti collaborano per il raggiungimento di un fine comune
 - **Competizione:** interazione prevedibile ma non desiderata tra processi che interagiscono per sincronizzarsi nell'accesso a risorse comuni
 - **Interferenza:** interazione non prevista e non desiderata, potenzialmente deleteria tra processi
+
+Possiamo classificare i processi come:
+- **Indipendenti:** se l'esecuzione di P1 non è influenzata da P2, e viceversa
+- **[[Processi Interagenti|Interagenti]]**: se l'esecuzione di P1 è influenzata dall'esecuzione di P2, e/o viceversa.
+	- **Cooperanti:** i processi interagiscono volontariamente per raggiungere obbiettivi comuni, fanno parte della stessa applicazione
+	- **In competizione:** non necessariamente fanno parte della stessa applicazione, però interagiscono indirettamente per l'acquisizione di risorse comuni
 
 **Supporto all'interazione**
 L'interazione tra processi interagenti può essere realizzata mediante:

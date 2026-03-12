@@ -4,51 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "d7db3c4f343b4985",
+        "id": "ced59063565ec9b1",
         "type": "tabs",
         "children": [
           {
-            "id": "7c850ab0539e745f",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sistemi Operativi.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Sistemi Operativi"
-            }
-          },
-          {
-            "id": "0b0d6256bbdf3771",
+            "id": "376853554f8fc0b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "UNIX.md",
+                "file": "System Calls.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UNIX"
+              "title": "System Calls"
             }
           },
           {
-            "id": "dfc4ab17f2078488",
+            "id": "cca7e0c7ee3fd231",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Segnali in UNIX.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Segnali in UNIX"
+            }
+          },
+          {
+            "id": "96e793f2bcc7dd9c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kill().md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "kill()"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -80,10 +82,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "syscalls",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -101,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -121,7 +124,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Microkernel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Microkernel"
+              "title": "Backlinks"
             }
           },
           {
@@ -140,12 +142,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Microkernel.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Microkernel"
+              "title": "Outgoing links"
             }
           },
           {
@@ -192,11 +193,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,46 +211,47 @@
       "bases:Create new base": false
     }
   },
-  "active": "dfc4ab17f2078488",
+  "active": "cca7e0c7ee3fd231",
   "lastOpenFiles": [
-    "GNU∕Linux.md",
-    "Comandi UNIX.md",
+    "System Calls.md",
+    "Segnali in UNIX.md",
+    "kill().md",
+    "sleep().md",
+    "alarm().md",
+    "pause().md",
+    "signal().md",
+    "Interfaccia utente e programmatore.md",
+    "Sincronizzazione tra Processi.md",
     "UNIX.md",
-    "Untitled.md",
-    "Esempio ls.png",
-    "Sistemi Operativi.md",
-    "Dispositivi di I∕O.md",
-    "Processi.md",
-    "e.md",
-    "Swapping.md",
-    "Creazione di processi.md",
-    "fork().md",
-    "exit().md",
-    "wait().md",
-    "exec().md",
-    "System Calls in UNIX.md",
+    "Interfaccia programmatore.md",
+    "Processi Interagenti.md",
+    "Segnali UNIX.png",
     "Processi UNIX.md",
-    "Foreground vs Background.png",
-    "Interazione mediante shell.png",
-    "Generazione di Processi.png",
-    "Inizializzazione dei processi UNIX.png",
-    "Terminazione di processi.md",
-    "Threads.md",
-    "User Structure.md",
-    "Process Structure.md",
-    "Effetti della forkI().png",
-    "Code di Scheduling.png",
-    "Context switch.png",
-    "Creazione di processi.png",
-    "Gerarchie di processi.png",
-    "Process Control Block.md",
-    "Memoria Secondaria.md",
-    "google.com.md",
-    "Struttura Modulare.md",
-    "Struttura Monolitica.md",
-    "Thread.md",
+    "Processi.md",
+    "Protezione.md",
+    "Comunicazione tra Processi.md",
+    "Send con sincronizzazione estesa.png",
+    "Buffering capacità nulla.png",
+    "Untitled.md",
+    "Comunicazione.md",
+    "Pasted image 20260312101232.png",
+    "Sistemi Operativi.md",
+    "Scheduling della CPU.md",
+    "FCFS.md",
+    "SJF.md",
+    "Round Robin.md",
+    "Approcci misti.md",
+    "Algoritmi di Scheduling.md",
     "Untitled.base",
+    "Untitled 2.base",
     "Untitled 1.base",
+    "Scheduling in UNIX.md",
+    "Multi Level Feedback Queue.png",
+    "Stimare la lunghezza di CPU burst.png",
+    "Exponential Averaging.png",
+    "Exponential Averaging.png",
+    "Effetto Convoglio nel FCFS.png",
+    "Pasted image 20260304150154.png",
     "Excalidraw",
     "Interfaccia utente",
     "dispositivi di I"

@@ -4,7 +4,7 @@ Tra le altre, contiene le seguente informazioni:
 - Stato
 - Puntatori alle aree dati e stack
 - Riferimento indiretto al codice, ovvero il riferimento all'elemento della **Text Table** associato al codice del processo
-- Informazioni di scheduling (priorità, tempo di CPU, ...)
+- Informazioni di [[Scheduling della CPU|scheduling]] (priorità, tempo di CPU, ...)
 - Riferimento al processo padre attraverso il **PID**
 - Informazioni relative alla **gestione di segnali**
 - Puntatore al processo successivo nella [[Code di Scheduling.png|coda di processi]]

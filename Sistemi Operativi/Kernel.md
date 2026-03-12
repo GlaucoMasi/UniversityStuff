@@ -4,7 +4,7 @@ Realizza diverse funzioni a seconda del sistema operativo.
 
 Tra le funzioni del nucleo tipicamente ci sono:
 - Creazione/terminazione dei [[processi]]
-- Scheduling della CPU
+- [[Scheduling della CPU]]
 - Sincronizzazione/comunicazione tra [[processi]]
 - Gestione del context switch
 - Gestione della memoria
