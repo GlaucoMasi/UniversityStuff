@@ -4,53 +4,52 @@
     "type": "split",
     "children": [
       {
-        "id": "ced59063565ec9b1",
+        "id": "d3257b714b0ffaef",
         "type": "tabs",
         "children": [
           {
-            "id": "376853554f8fc0b2",
+            "id": "831966a38be8cbb8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "System Calls.md",
+                "file": "File System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "System Calls"
+              "title": "File System"
             }
           },
           {
-            "id": "cca7e0c7ee3fd231",
+            "id": "91e8a1d610a2e52b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Segnali in UNIX.md",
+                "file": "File.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Segnali in UNIX"
+              "title": "File"
             }
           },
           {
-            "id": "96e793f2bcc7dd9c",
+            "id": "2c7ec2e98e5f0b60",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "kill().md",
+                "file": "UNIX.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "kill()"
+              "title": "UNIX"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +81,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "syscalls",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -108,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "265b5d6ec975c9b8",
@@ -211,47 +211,46 @@
       "bases:Create new base": false
     }
   },
-  "active": "cca7e0c7ee3fd231",
+  "active": "831966a38be8cbb8",
   "lastOpenFiles": [
-    "System Calls.md",
-    "Segnali in UNIX.md",
+    "UNIX.md",
+    "Direttorio.md",
+    "File System.md",
+    "File.md",
+    "Blocchi & record logici.png",
+    "Partizione.md",
+    "Struttura a grafo aciclico.png",
+    "Struttura ad albero.png",
+    "Struttura a due livelli.png",
+    "Struttura a un livello.png",
+    "Untitled.md",
+    "Directorio.md",
+    "Organizzazione file system.png",
+    "Processi UNIX.md",
+    "Protezione.md",
+    "Memoria Secondaria.md",
+    "Sistemi Operativi.md",
     "kill().md",
+    "Segnali in UNIX.md",
+    "System Calls.md",
     "sleep().md",
     "alarm().md",
     "pause().md",
     "signal().md",
     "Interfaccia utente e programmatore.md",
     "Sincronizzazione tra Processi.md",
-    "UNIX.md",
     "Interfaccia programmatore.md",
     "Processi Interagenti.md",
     "Segnali UNIX.png",
-    "Processi UNIX.md",
     "Processi.md",
-    "Protezione.md",
     "Comunicazione tra Processi.md",
     "Send con sincronizzazione estesa.png",
     "Buffering capacità nulla.png",
-    "Untitled.md",
     "Comunicazione.md",
     "Pasted image 20260312101232.png",
-    "Sistemi Operativi.md",
-    "Scheduling della CPU.md",
-    "FCFS.md",
-    "SJF.md",
-    "Round Robin.md",
-    "Approcci misti.md",
-    "Algoritmi di Scheduling.md",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",
-    "Scheduling in UNIX.md",
-    "Multi Level Feedback Queue.png",
-    "Stimare la lunghezza di CPU burst.png",
-    "Exponential Averaging.png",
-    "Exponential Averaging.png",
-    "Effetto Convoglio nel FCFS.png",
-    "Pasted image 20260304150154.png",
     "Excalidraw",
     "Interfaccia utente",
     "dispositivi di I"

@@ -6,6 +6,6 @@ Nel 1991 viene creato il kernel Unix-compatible LINUX, poi integrato nel progett
 	- Comunicazione tra processi UNIX: [[Comunicazione tra Processi#Comunicazione tra processi UNIX|Comunicazione UNIX]]
 	- Sincronizzazione tra processi UNIX: [[Sincronizzazione tra Processi#Sincronizzazione nel modello ad ambiente locale|Sincronizzazione]] facendo uso di [[Segnali in UNIX]]
 - Scheduling della CPU in UNIX: [[Scheduling in UNIX]]
-
+- Protezione del file system in UNIX: [[File System#Liste di accesso e gruppi (es. UNIX)|File System e protezione in UNIX]]
 
 
