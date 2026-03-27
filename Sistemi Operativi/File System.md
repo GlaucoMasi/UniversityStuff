@@ -1,3 +1,5 @@
+[[File System di UNIX]]
+
 Ogni sistema di elaborazione dispone di uno o più dispositivi per la memorizzazione persistente delle informazioni, chiamati [[memoria secondaria]].
 
 Il compito del SO è fornire una visione **logica** **uniforme** della memoria secondaria, **indipendente** dal tipo e dal numero dei dispositivi. Deve:
@@ -62,15 +64,25 @@ Il metodo di [[File#Metodi di Accesso|accesso a file]] è **indipendente** dal t
 
 # Protezione
 Il proprietario/creatore di un file dovrebbe avere la possibilità di controllare quali azioni sono consentite sul file e da parte di chi. I diritti che si possono avere su un file includono, ad esempio: Read, Write, Execute, Append, Delete, List, e altri.
-
 #### Liste di accesso e gruppi (es. UNIX)
-**Modalità di accesso:** read, write, execute (RWX)
-Ci sono tre classi di utenti: user, group e others access
+##### Modalità di accesso attraverso Bit di Protezione:
+- 9 bit di lettura per read, write, execute (RWX)
+- Tre classi di utenti: user, group e others access
 L'amministratore può creare gruppi, con nomi unici, e modificare gli utenti di un gruppo
 Dato un file o una directory, si devono definire le regole di accesso desiderate
 **Cambio gruppo:** `chgrp G game`  -->  Il gruppo del file game è G
-**Modifica diritti di accesso:** `chmod 761 game` 
+**Modifica diritti di accesso:** `chmod 761 game` utilizzando il **formato ottale**
 => Il proprietario può fare tutto, il gruppo può leggere e scrivere, gli altri solo eseguire
+##### Bit di permessi speciali
+Ci sono altri 3 bit di permessi, soprattutto per file **eseguibili:**
+- **SUID:** Set-User-ID
+- **SGID:** Set-Group-ID
+- **Sticky:** Save-Text-Image
+Al processo che esegue un **file eseguibile** viene assegnato **dinamicamente** uno **User-ID** e **Group-ID** effettivi. Di **default** sono quelli reali, ma si può modificare.
+La lo **SUID** è settato, viene settato lo **User-ID** del proprietario del file, analogo per il gruppo.
+Quindi chi lancia il processo assume temporaneamente **l'identità del proprietario**, un esempio è la possibilità di impersonificare **root** per modificare **/etc/passwd**
+##### Modifica dei bit di protezione
+Comando shell `chmod` oppure con la syscall [[chmod()]]
 
 # Organizzazione fisica
 Il SO si occupa della realizzazione del file system sui dispositivi di memorizzazione secondaria. È necessario allocare i blocchi fisici, gestire lo spazio libero e realizzare dei descrittori.
