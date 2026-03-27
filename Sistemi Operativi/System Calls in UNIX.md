@@ -14,6 +14,7 @@ Chiamate di sistema per:
 - lettura: [[read()]]
 - scrittura: [[write()]]
 - accesso "diretto": [[lseek()]]
+- duplicazione di un elemento nella tabella dei file aperti di processo [[dup()]]
 
 ### Per la gestione di file
 Chiamate di sistema per:
@@ -31,6 +32,14 @@ Chiamate di sistema per:
 - chiusura: [[closedir()]]
 - lettura: [[readdir()]]
 - creazione: [[mkdir()]]
+
+### Per la comunicazione con [[pipe]]
+Vengono utilizzate le stesse syscalls che per i file.
+In aggiunta: [[pipe()]]
+
+### Per la comunicazione con [[fifo]]
+Vengono utilizzate le stesse syscalls che per i file.
+In aggiunta: [[mkfifo()]]
 
 ### Fallimento
 In caso di fallimento, ogni system call ritorna un valore negativo.

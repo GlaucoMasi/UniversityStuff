@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f7edbb803b333af8",
+        "id": "33e8c0fa2d270359",
         "type": "tabs",
         "children": [
           {
-            "id": "9e0b7ca2c3f38733",
+            "id": "824afb898c56c0ff",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "pasted",
+                "query": "system cal",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -70,7 +70,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -177,10 +178,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "9e0b7ca2c3f38733",
+  "active": "824afb898c56c0ff",
   "lastOpenFiles": [
-    "File System di UNIX.md",
+    "Comunicazione tra Processi.md",
+    "pipe().md",
+    "pipe.md",
+    "dup().md",
+    "mkfifo().md",
     "System Calls in UNIX.md",
+    "File System di UNIX.md",
+    "fifo.md",
+    "Processi UNIX.md",
     "readdir().md",
     "mkdir().md",
     "Struttura dirent.png",
@@ -201,13 +209,6 @@
     "Untitled.md",
     "Struttura stat.png",
     "link().md",
-    "unlink().md",
-    "lseek().md",
-    "write().md",
-    "open().md",
-    "close().md",
-    "creat().md",
-    "Processi UNIX.md",
     "Strutture dati accesso file.png",
     "VFS.png",
     "Block groups.png",

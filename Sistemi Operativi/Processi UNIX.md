@@ -4,17 +4,17 @@ Il processo in [[UNIX]] è un **processo pesante** con codice **rientrante**:
 
 Adotta il **Modello ad Ambiente Locale**, o a scambio di messaggi: ogni processo ha un proprio spazio di indirizzamento locale e non condiviso. L'unica eccezione è che il codice può essere condiviso.
 
-### Gerarchie nei processi UNIX
+# Gerarchie nei processi UNIX
 ![[Gerarchie nei processi UNIX.png]]
 
-### Stati di un processo UNIX
+# Stati di un processo UNIX
 ![[Stati di un processo UNIX.png]]
 Modifiche/Aggiunte rispetto al caso generale:
 - Sleeping: analogo allo stadio waiting
 - **Zombie:** il processo è terminato, ma è in attesa che il padre ne rilevi lo stato di terminazione
 - [[Swapping|Swapped]]: il processo (o parte di esso) è temporaneamente trasferito in [[memoria secondaria]]
 
-### Rappresentazione dei processi UNIX
+# Rappresentazione dei processi UNIX
 Il codice dei processi è **rientrante**, quindi:
 - Codice e dati sono separati (modello a codice puro)
 - Il SO gestisce una struttura dati globale in cui sono contenuti i puntatori ai codici utilizzati dai processi, la **text table**
@@ -26,7 +26,7 @@ Il [[Process Control Block]]/Descrittore del processo in [[UNIX]] è rappresenta
 - [[Process Structure]]: informazioni necessarie al sistema per gestire il processo, a prescindere dallo stato in cui si trova. Risiede sempre in memoria centrale
 - [[User Structure]]: informazioni necessarie solo se il processo è residente in memoria centrale (e se è running. In caso di swap può essere trasferita e il riferimento nella [[Process Structure]] cambierà) 
 
-### Immagine di un processo UNIX
+# Immagine di un processo UNIX
 L'immagine di un processo è **l'insieme delle aree di memoria e strutture dati** associate al processo.
 
 **Protezione:** non tutta l'immagine è accessibile in modo user, c'è una parte kernel e una parte utente (accessibile solo dal processo in questione in modalità user).
@@ -45,7 +45,7 @@ L'immagine di un processo è **l'insieme delle aree di memoria e strutture dati*
 
 **System calls per la gestione dei processi:** [[System Calls in UNIX#Per la gestione dei processi|System Calls]]
 
-### Inizializzazione dei processi UNIX
+# Inizializzazione dei processi UNIX
 La prima shell si chiama **shell di login**
 ![[Inizializzazione dei processi UNIX.png]]
 

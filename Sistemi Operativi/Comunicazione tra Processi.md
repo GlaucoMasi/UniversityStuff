@@ -46,11 +46,12 @@ Ogni canale è caratterizzato da una capacità (≥ 0) che esprime il massimo nu
 - **Send asincrona,** nei canali con capacità non nulla la send non è sospensiva, il mittente deposita il messaggio nel canale e continua la sua esecuzione
 
 ### Comunicazione tra processi [[UNIX]]
-Tre meccanismi di comunicazione:
-- **pipe:** comunicazione locale (nell'ambito della stessa gerarchia di processi)
-	- indiretta (senza naming esplicito)
-	- canale unidirezionale molti-a-molti
-	- bufferizzata (capacità limitata): send asincrona. Se il buffer è pieno la send è sospensiva, se il buffer è vuoto la receive è sospensive
-- **fifo:** comunicazione locale (anche tra processi di gerarchie diverse)
-- **socket:** comunicazione in ambiente distribuito (tra processi in esecuzione su nodi diversi di una rete)
+I processi UNIX non possono condividere memoria, modello ad ambiente locale. La comunicazione può avvenire:
+- Mediante **condivisione di file**, ma è necessario realizzare la sincronizzazione tra processi
+- Attraverso specifici strumenti di **Inter Process Communication:**
+	- Tra processi sulla stessa macchina:
+		- [[fifo]], per qualunque insieme di processi
+		- [[pipe]], tra processi della stessa gerarchia
+	- Tra processi in nodi diversi della stessa rete:
+		-  **socket:** comunicazione in ambiente distribuito
 
