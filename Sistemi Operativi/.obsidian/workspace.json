@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "33e8c0fa2d270359",
+        "id": "e19a3650ccaa0739",
         "type": "tabs",
         "children": [
           {
-            "id": "824afb898c56c0ff",
+            "id": "e9225cb0d5b0c7a0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "lseek().md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "lseek()"
             }
           }
         ]
@@ -70,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -175,40 +178,43 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "webpage-html-export:Export as HTML": false
     }
   },
-  "active": "824afb898c56c0ff",
+  "active": "e9225cb0d5b0c7a0",
   "lastOpenFiles": [
-    "Comunicazione tra Processi.md",
-    "pipe().md",
-    "pipe.md",
-    "dup().md",
-    "mkfifo().md",
-    "System Calls in UNIX.md",
-    "File System di UNIX.md",
-    "fifo.md",
-    "Processi UNIX.md",
-    "readdir().md",
-    "mkdir().md",
+    "Approcci misti.md",
+    "Algoritmi di Scheduling.md",
+    "Creazione di processi.md",
+    "Dispositivi di I∕O.md",
+    "GNU∕Linux.md",
+    "FCFS.md",
+    "Monitor.md",
+    "Modi di Funzionamento.md",
+    "Microkernel.md",
+    "Memoria Virtuale.md",
+    "Memoria Secondaria.md",
+    "Memoria Centrale.md",
+    "Macchine Virtuali.md",
+    "Kernel.md",
+    "Interruzioni.md",
+    "Interfaccia utente e programmatore.md",
+    "Interfacce di rete.md",
+    "Processi Interagenti.md",
+    "Process Structure.md",
+    "Process Control Block.md",
+    "SJF.md",
+    "Sistemi Operativi.md",
+    "Sistema Multiprogrammato.md",
+    "Sincronizzazione tra Processi.md",
+    "Sicurezza.md",
+    "Segnali in UNIX.md",
+    "Untitled.base",
+    "Untitled 1.base",
     "Struttura dirent.png",
     "Pasted image 20260327192111.png",
-    "stat().md",
-    "fork().md",
-    "exit().md",
-    "exec().md",
-    "closedir().md",
-    "opendir().md",
-    "chdir().md",
-    "chown().md",
-    "chmod().md",
-    "read().md",
-    "i-node.md",
-    "File System.md",
-    "access().md",
-    "Untitled.md",
     "Struttura stat.png",
-    "link().md",
     "Strutture dati accesso file.png",
     "VFS.png",
     "Block groups.png",
@@ -216,9 +222,7 @@
     "Pasted image 20260327172741.png",
     "Indirizzamento.png",
     "Struttura logica UNIX.png",
-    "Untitled.base",
     "Untitled 2.base",
-    "Untitled 1.base",
     "Excalidraw",
     "Interfaccia utente",
     "dispositivi di I"
