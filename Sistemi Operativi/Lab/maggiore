@@ -1,0 +1,61 @@
+#!/bin/bash
+
+if test $# -ne 2
+then
+  echo "SINTASSI: /maggiore file1 file2"
+  exit 1
+fi
+
+file1="$1"
+case "$file1" in
+  */*) echo "$file1 non è un basename"
+       exit 2 ;;
+  *)  if [ ! -f "$HOME/$file1" ]; then
+        echo "$file1 non è un file esistente"
+        exit 2
+      fi
+      if [ ! -r "$HOME/$file1" ]; then
+        echo "$file1 non è un file leggibile"
+        exit 2
+      fi  
+esac
+
+file2="$2"
+case "$file2" in
+  */*) echo "$file2 non è un basename"
+       exit 2 ;;
+  *)  if [ ! -f "$HOME/$file2" ]; then
+        echo "$file2 non è un file esistente"
+        exit 2
+      fi
+      if [ ! -r "$HOME/$file2" ]; then
+        echo "$file2 non è un file leggibile"
+        exit 2
+      fi  
+esac
+
+echo "Inserire un groupname"
+read groupname
+
+f1_owner=`stat --format="%G" "$HOME/$file1"`
+if [ "$f1_owner" != "$groupname" ]; then
+  echo "$file1 non appartiene al gruppo $groupname, ma al gruppo $f1_owner"
+  exit 3
+fi
+
+f2_owner=`stat --format="%G" "$HOME/$file2"`
+if [ "$f2_owner" != "$groupname" ]; then
+  echo "$file2 non appartiene al gruppo $groupname, ma al gruppo $f2_owner"
+  exit 3
+fi
+
+dim_f1_byte=`stat --format="%s" "$HOME/$file1"`
+dim_f2_byte=`stat --format="%s" "$HOME/$file2"`
+
+if [ $dim_f1_byte -gt $dim_f2_byte ]; then
+  echo "Il file $HOME/$file1 ha dimensione maggiore, pari a `expr $dim_f1_byte / 1024` KiB"
+elif [ $dim_f2_byte -gt $dim_f1_byte ]; then
+  echo "Il file $HOME/$file2 ha dimensione maggiore, pari a `expr $dim_f2_byte / 1024` KiB"
+else
+  echo "I file $HOME/$file1 e $HOME/$file2 hanno la stessa dimensione, pari a `expr $dim_f2_byte / 1024` KiB"
+fi

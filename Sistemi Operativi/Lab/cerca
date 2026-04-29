@@ -1,0 +1,60 @@
+#!/bin/bash
+
+if test $# -lt 2
+then
+  echo "SINTASSI (almeno due argomenti): cerca N D1 D2 .. DX"
+  exit 1
+fi
+
+N="$1"
+if ! [[ "$N" =~ ^[1-9][0-9]*$ ]]; then
+  echo "$N non è un intero positivo"
+  exit 1
+fi
+
+shift
+
+for i in "$@"
+do
+  case "$i" in
+    /*) ;;
+    *)  echo "$i non è un nome assoluto"
+  esac
+  if [ ! -d "$i" ]; then
+    echo "$i non è una directory esistente"
+    exit 2
+  fi
+done
+
+tot=0
+best=0
+bestFile=""
+
+for d in "$@"
+do
+  for i in "$d"/*
+  do
+    if [ -f "$i" ]
+    then
+      perm=`ls -l "$i" | cut -c 4,7,10`
+      if [ $perm = xxx ]
+      then
+        tot=`expr $tot + 1`
+        
+        parole=`head -n $N "$i" | wc -w`
+
+        if [ $parole -gt $best ]; then
+          bestFile="$i"
+          best=$parole
+        fi
+      fi
+    fi
+  done
+done
+
+echo "Il file con il maggior numero di parole nelle prime $N righe è $bestFile, con $best parole"
+
+fout="./report$USER.log"
+echo "Il numero totale di file esaminati è $tot" > $fout
+
+
