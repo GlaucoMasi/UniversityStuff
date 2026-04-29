@@ -1,0 +1,1 @@
+Se il sistema appartiene a una rete, la sicurezza misura l'affidabilità del sistema nei confronti di **accessi** indesiderati e potenzialmente malevoli **dal mondo esterno**.
